@@ -23,7 +23,7 @@ public class Spilleplade {
 	// forudsætning at metoden getNytFeltNummer er blevet kørt for spilleren,
 	// inden de to andre metoder kan fungere rigtigt
 
-	private int SpillePladeLængde = 10;
+	private int SpillePladeLaengde = 10;
 
 	// Husk at hvis der ændres på spillepladens længde, skal der sættes
 	// dubletter af de allerede eksisterende felter
