@@ -53,9 +53,9 @@ public class Spilleplade {
 
 		NewFelt = SpillerFelt + RollSum;
 
-		if (NewFelt > SpillePladeLængde) {
+		if (NewFelt > SpillePladeLaengde) {
 
-			NewFelt = NewFelt - SpillePladeLængde;
+			NewFelt = NewFelt - SpillePladeLaengde;
 		}
 
 		return NewFelt;
