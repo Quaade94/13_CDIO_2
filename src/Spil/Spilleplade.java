@@ -23,7 +23,7 @@ public class Spilleplade {
 	// forudsætning at metoden getNytFeltNummer er blevet kørt for spilleren,
 	// inden de to andre metoder kan fungere rigtigt
 
-	private int SpillePladeLængde = 11;
+	private int SpillePladeLængde = 10;
 
 	// Husk at hvis der ændres på spillepladens længde, skal der sættes
 	// dubletter af de allerede eksisterende felter
@@ -43,8 +43,7 @@ public class Spilleplade {
 	// private int NyScorre = 0;
 
 	private int[] Felter = { 250, -100, 100, -20, 180, 0, -70, 60, -80, -50, 650 };
-	private String[] FeltNavn = { "Tower", "Crater", "Palace gates", "Cold Desert", "Cold Desert", "Monastery",
-			"Black cave", "Huts in the mountain", "The Werewall", "The pit", "Goldmine" };
+	private String[] FeltNavn = { "Tower", "Crater", "Palace gates", "Cold Desert", "Cold Desert", "Monastery", "Black cave", "Huts in the mountain", "The Werewall", "The pit", "Goldmine" };
 	private int NewFelt = 0;
 	private int NyScorre = 0;
 
