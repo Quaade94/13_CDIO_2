@@ -9,6 +9,7 @@ import java.awt.Font;
 public class GUI implements ActionListener {
 	//Overfører alt texten
 	Language X = new Language();
+	Terninger Roll = new Terninger();
 	//laver variables
     private int P1_points = 1000;
     private int P2_points = 1000;
@@ -19,6 +20,7 @@ public class GUI implements ActionListener {
     private JLabel map_title = new JLabel(X.lang()[6]);
     private JLabel player1_map = new JLabel(X.lang()[7]);
     private JLabel player2_map = new JLabel(X.lang()[8]);
+    private JLabel message = new JLabel(X.lang()[9]);
     private JFrame frame = new JFrame();
 
     public GUI() {
@@ -59,6 +61,8 @@ public class GUI implements ActionListener {
         //panel med knap
         JPanel panel3 = new JPanel();
         panel3.setBorder(BorderFactory.createEmptyBorder(30, 30, 10, 30));
+        panel3.setLayout(new GridLayout(0,1));
+        panel3.add(message);
         panel3.add(button);
         panel3.setBackground(Color.lightGray);
         
@@ -77,18 +81,20 @@ public class GUI implements ActionListener {
         frame.setVisible(true);
     }
 
-    // Hvad sker der, n�r knappen bliver trykket:
-    public void actionPerformed(ActionEvent e) {
-
+    // Hvad sker der, naar knappen bliver trykket:
+    public void actionPerformed(ActionEvent F) {
+    	int[] roll = Roll.Roll();
         if (player_switch == 0) {
-            P1_points++; //skal v�re spillers totale points
+            P1_points = P1_points + roll[2]; //skal vaere spillers totale points
             P1_label.setText(X.lang()[0] + P1_points);
             player_turn.setText(X.lang()[3]);
+            message.setText(X.lang()[9] + roll[0] + " and " + roll[1]);
         	player_switch = 1;
         } else if (player_switch == 1) {
-            P2_points++;
+            P2_points = P2_points + roll[2]; //Not actual points plz mk plair cls
             P2_label.setText(X.lang()[1] + P2_points);
             player_turn.setText(X.lang()[2]);
+            message.setText(X.lang()[9] + roll[0] + " and " + roll[1]);
         	player_switch = 0;
         }
     };

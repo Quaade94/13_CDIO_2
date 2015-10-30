@@ -11,6 +11,7 @@ public class Language {
 	private String sent6;
 	private String sent7;
 	private String sent8;
+	private String sent9;
 	
 	
 	public String[] lang() {
@@ -24,9 +25,10 @@ public class Language {
 		sent6 = "Spillerposition!";
 		sent7 = "Spiller 1 position: ";
 		sent8 = "Spiller 2 position: ";
+		sent9 = "You rolled: ";
 		
 		
-		String [] word = {sent0 , sent1 , sent2 , sent3 , sent4 , sent5 , sent6 , sent7, sent8};
+		String [] word = {sent0 , sent1 , sent2 , sent3 , sent4 , sent5 , sent6 , sent7, sent8, sent9};
 		return word;
 
 	
