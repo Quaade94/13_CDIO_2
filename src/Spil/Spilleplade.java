@@ -45,32 +45,16 @@ public class Spilleplade {
 */
 	private int[] Felter = { 250, -100, 100, -20, 180, 0, -70, 60, -80, -50, 650 };
 	private String[] FeltNavn = { "Tower", "Crater", "Palace gates", "Cold Desert", "Cold Desert", "Monastery", "Black cave", "Huts in the mountain", "The Werewall", "The pit", "Goldmine" };
-	private int NewFelt = 0;
-	private int NyScorre = 0;
 
-	public int getNytFeltNummer(int SpillerFelt, int RollSum) {
 
-		NewFelt = 0;
-		NewFelt = SpillerFelt + RollSum;
+	public int getFeltEffekt(int Spillerfelt) {
 
-		if (NewFelt > SpillePladeLaengde) {
-
-			NewFelt = NewFelt - SpillePladeLaengde;
-		}
-		return NewFelt;
+		return Felter[Spillerfelt];
 	}
 
-	public String getNytFeltNavn() {
+	public String getFeltNavn(int Spillerfelt) {
 
-		return FeltNavn[NewFelt];
-	}
-
-	public int getNyScorre(int SpillerScorre) {
-
-		NyScorre = 0;
-		NyScorre = SpillerScorre + Felter[NewFelt];
-
-		return NyScorre;
+		return FeltNavn[Spillerfelt];
 	}
 
 }
