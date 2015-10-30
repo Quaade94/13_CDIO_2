@@ -1,5 +1,6 @@
 package Spil;
 import javax.swing.*;
+
 import java.awt.*;
 import java.awt.event.*;
 import java.awt.Color;
@@ -7,6 +8,8 @@ import java.awt.FlowLayout;
 import java.awt.Font;
 
 public class GUI implements ActionListener {
+	//OverfÃ¸rer alt texten
+	Language X = new Language();
 	//laver variables
     private int P1_points = 0;
     private int P2_points = 0;
@@ -65,7 +68,7 @@ public class GUI implements ActionListener {
         container2.add(container);
         container2.add(panel3);
         
-        // sætter rammen op
+        // sï¿½tter rammen op
         frame.add(container2, BorderLayout.CENTER);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setTitle("Terningespil");
@@ -75,11 +78,11 @@ public class GUI implements ActionListener {
         frame.setVisible(true);
     }
 
-    // Hvad sker der, når knappen bliver trykket:
+    // Hvad sker der, nï¿½r knappen bliver trykket:
     public void actionPerformed(ActionEvent e) {
 
         if (player_switch == 0) {
-            P1_points++; //skal være spillers totale points
+            P1_points++; //skal vï¿½re spillers totale points
             P1_label.setText("Player 1 points:  " + P1_points);
             player_turn.setText("Player 2's turn!");
         	player_switch = 1;
@@ -94,5 +97,6 @@ public class GUI implements ActionListener {
     // Viser GUI
     public static void main(String[] args) {
         new GUI();
+        
     }
 }
