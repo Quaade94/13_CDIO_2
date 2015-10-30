@@ -4,28 +4,27 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.awt.Color;
-import java.awt.FlowLayout;
 import java.awt.Font;
 
 public class GUI implements ActionListener {
 	//Overfører alt texten
 	Language X = new Language();
 	//laver variables
-    private int P1_points = 0;
-    private int P2_points = 0;
+    private int P1_points = 1000;
+    private int P2_points = 1000;
     private int player_switch = 0;
-    private JLabel P1_label = new JLabel("Player 1 points: 0", SwingConstants.CENTER);
-    private JLabel P2_label = new JLabel("Player 2 points: 0", SwingConstants.CENTER);;
-    private JLabel player_turn = new JLabel("Player 1's turn!", SwingConstants.CENTER);
-    private JLabel map_title = new JLabel("Spillerposition!");
-    private JLabel player1_map = new JLabel("Spiller 1 position: 1");
-    private JLabel player2_map = new JLabel("Spiller 2 position: 1");
+    private JLabel P1_label = new JLabel(X.lang()[0] + P1_points, SwingConstants.CENTER);
+    private JLabel P2_label = new JLabel(X.lang()[1] + P2_points, SwingConstants.CENTER);;
+    private JLabel player_turn = new JLabel(X.lang()[2], SwingConstants.CENTER);
+    private JLabel map_title = new JLabel(X.lang()[6]);
+    private JLabel player1_map = new JLabel(X.lang()[7]);
+    private JLabel player2_map = new JLabel(X.lang()[8]);
     private JFrame frame = new JFrame();
 
     public GUI() {
     	
         // knappen
-        JButton button = new JButton("Throw Dice!");
+        JButton button = new JButton(X.lang()[4]);
         button.addActionListener(this);
 
         //label customization
@@ -71,7 +70,7 @@ public class GUI implements ActionListener {
         // s�tter rammen op
         frame.add(container2, BorderLayout.CENTER);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setTitle("Terningespil");
+        frame.setTitle(X.lang()[5]);
         frame.setSize(450, 400);
         frame.setResizable(false);
         //frame.pack();
@@ -83,13 +82,13 @@ public class GUI implements ActionListener {
 
         if (player_switch == 0) {
             P1_points++; //skal v�re spillers totale points
-            P1_label.setText("Player 1 points:  " + P1_points);
-            player_turn.setText("Player 2's turn!");
+            P1_label.setText(X.lang()[0] + P1_points);
+            player_turn.setText(X.lang()[3]);
         	player_switch = 1;
         } else if (player_switch == 1) {
             P2_points++;
-            P2_label.setText("Player 2 points:  " + P2_points);
-            player_turn.setText("Player 1's turn!");
+            P2_label.setText(X.lang()[1] + P2_points);
+            player_turn.setText(X.lang()[2]);
         	player_switch = 0;
         }
     };

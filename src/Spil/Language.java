@@ -2,18 +2,33 @@ package Spil;
 
 public class Language {
 
+	private String sent0;
 	private String sent1;
 	private String sent2;
+	private String sent3;
+	private String sent4;
+	private String sent5;
+	private String sent6;
+	private String sent7;
+	private String sent8;
 	
 	
 	public String[] lang() {
 		
-		sent1 = "";
-		sent2 = "";
+		sent0 = "Player 1 points: ";
+		sent1 = "Player 2 points: ";
+		sent2 = "Player 1's turn: ";
+		sent3 = "Player 2's turn: ";
+		sent4 = "Throw Dice";
+		sent5 = "Terningespil";
+		sent6 = "Spillerposition!";
+		sent7 = "Spiller 1 position: ";
+		sent8 = "Spiller 2 position: ";
 		
-		String [] word = {sent1 , sent2};
+		
+		String [] word = {sent0 , sent1 , sent2 , sent3 , sent4 , sent5 , sent6 , sent7, sent8};
 		return word;
-	
+
 	
 	
 	
