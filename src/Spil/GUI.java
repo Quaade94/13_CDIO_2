@@ -10,6 +10,9 @@ public class GUI implements ActionListener {
 	//Overfører alt texten
 	Language X = new Language();
 	Terninger Roll = new Terninger();
+	Spilleplade Board = new Spilleplade();
+	Spiller Player = new Spiller();
+	
 	//laver variables
     private int P1_points = 1000;
     private int P2_points = 1000;
@@ -82,23 +85,55 @@ public class GUI implements ActionListener {
     }
 
     // Hvad sker der, naar knappen bliver trykket:
+//    public void actionPerformed(ActionEvent F) {
+//    	int[] roll = Roll.Roll();
+//        if (player_switch == 0) {
+//            P1_points = P1_points + roll[2]; //skal vaere spillers totale points
+//            P1_label.setText(X.lang()[0] + P1_points);
+//            player_turn.setText(X.lang()[3]);
+//            message.setText(X.lang()[9] + roll[0] + " and " + roll[1]);
+//        	player_switch = 1;
+//        } else if (player_switch == 1) {
+//            P2_points = P2_points + roll[2]; //Not actual points plz mk plair cls
+//            P2_label.setText(X.lang()[1] + P2_points);
+//            player_turn.setText(X.lang()[2]);
+//            message.setText(X.lang()[9] + roll[0] + " and " + roll[1]);
+//        	player_switch = 0;
+//        }
+//    };
+
+    // Hvad sker der, naar knappen bliver trykket:
     public void actionPerformed(ActionEvent F) {
     	int[] roll = Roll.Roll();
         if (player_switch == 0) {
-            P1_points = P1_points + roll[2]; //skal vaere spillers totale points
-            P1_label.setText(X.lang()[0] + P1_points);
+        		Player.setPlayerPlace(1, Player.getPlayerPlace(1), roll[2]);
+        		Player.setPlayerScorre(1);
+        		
+//        		Denne her skal have en ny kasse Sebastian ;)
+// 			J_LableStuffs: ((X.lang()[10] + Player.getPlayerPlace(1));)
+
+            P1_label.setText(X.lang()[0] + Player.getPlayerScorre(1));
             player_turn.setText(X.lang()[3]);
             message.setText(X.lang()[9] + roll[0] + " and " + roll[1]);
         	player_switch = 1;
         } else if (player_switch == 1) {
-            P2_points = P2_points + roll[2]; //Not actual points plz mk plair cls
-            P2_label.setText(X.lang()[1] + P2_points);
-            player_turn.setText(X.lang()[2]);
-            message.setText(X.lang()[9] + roll[0] + " and " + roll[1]);
+    		Player.setPlayerPlace(2, Player.getPlayerPlace(2), roll[2]);
+    		Player.setPlayerScorre(2);
+    	
+//    		Denne her skal have en ny kasse Sebastian ;)
+//			J_LableStuffs: ((X.lang()[10] + Player.getPlayerPlace(2));)
+
+        P1_label.setText(X.lang()[0] + Player.getPlayerScorre(2));
+        player_turn.setText(X.lang()[3]);
+        message.setText(X.lang()[9] + roll[0] + " and " + roll[1]);
         	player_switch = 0;
         }
     };
-
+    
+    
+    
+    
+    
     // Viser GUI
     public static void main(String[] args) {
         new GUI();
