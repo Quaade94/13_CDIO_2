@@ -10,40 +10,58 @@ public class Spiller {
 	private int Player1Place = 0;
 	private int Player2Place = 0;
 
-	public void setPlayerPlace(int PlayerNr, int OldPlace, int RollSum) {
+	public void setPlayerPlace(boolean PlayerNr, int RollSum) {
 
-		if (PlayerNr == 1) {
+		
+		System.out.println(PlayerNr);
+		
+		if (PlayerNr == true) {
 
-			Player1Place = OldPlace + RollSum;
+//			System.out.println("Place Before roll " + Player1Place);
+//			System.out.println("Roll " + RollSum);
+			
+			Player1Place = Player1Place + RollSum;
 
+//			System.out.println("Place after roll " + Player1Place);
+			
 			if (Player1Place > 10) {
 
 				Player1Place = Player1Place - 10;
 			}
+//			System.out.println("Place after -10  " + Player1Place);
+		}	
+			
 
-		}
-		if (PlayerNr == 2) {
 
-			Player2Place = OldPlace + RollSum;
+			if (PlayerNr == false) {
 
-			if (Player2Place > 10) {
+//				System.out.println("Place Before roll " + Player2Place);
+//				System.out.println("Roll " + RollSum);
+				
+				Player2Place = Player2Place + RollSum;
 
-				Player2Place = Player2Place - 10;
+//				System.out.println("Place after roll " + Player2Place);
+				
+				if (Player2Place > 10) {
+
+					Player2Place = Player2Place - 10;
+				}
+				
+//				System.out.println("Place after -10  " + Player2Place);
+
 			}
-		} else {
-			System.out.println("Fejl i public class Spiller: setPlayerPlace");
-		}
+		
 	}
 	
-	public int getPlayerPlace(int PlayerNr){
+	public int getPlayerPlace(boolean PlayerNr){
 		
 		int ReturElement = -1;
 		
-		if (PlayerNr == 1){
+		if (PlayerNr == true){
 			
 			ReturElement = Player1Place;
 		}
-		if (PlayerNr == 2){
+		if (PlayerNr == false){
 			
 			ReturElement = Player2Place;
 		}
@@ -54,29 +72,33 @@ public class Spiller {
 		return ReturElement;
 	}
 	
-	public void setPlayerScorre (int PlayerNr){
+	public void setPlayerScorre (boolean PlayerNr){
 		
-		if (PlayerNr == 1){
+		System.out.println("Spiller = " + PlayerNr);
+		
+		if (PlayerNr == true){
 			
 			Player1Scorre = Player1Scorre + Plade.getFeltEffekt(Player1Place);
-			
+			System.out.println(Plade.getFeltEffekt(Player1Place));
+			System.out.println(Player1Scorre);
 		}
-		if (PlayerNr == 2){
+		if (PlayerNr == false){
 			
 			Player2Scorre = Player2Scorre + Plade.getFeltEffekt(Player2Place);
-			
+			System.out.println(Plade.getFeltEffekt(Player2Place));
+			System.out.println(Player2Scorre);
 		}
 	}
-	public int getPlayerScorre(int PlayerNr){
+	public int getPlayerScorre(boolean PlayerNr){
 		
 		int ReturElement = 0;
 		
-		if (PlayerNr == 1){
+		if (PlayerNr == true){
 			
 			ReturElement = Player1Scorre;
 			
 		}
-		if (PlayerNr == 2){
+		if (PlayerNr == false){
 			
 			ReturElement = Player2Scorre;
 			

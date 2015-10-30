@@ -104,29 +104,34 @@ public class GUI implements ActionListener {
 
     // Hvad sker der, naar knappen bliver trykket:
     public void actionPerformed(ActionEvent F) {
-    	int[] roll = Roll.Roll();
-        if (player_switch == 0) {
-        		Player.setPlayerPlace(1, Player.getPlayerPlace(1), roll[2]);
-        		Player.setPlayerScorre(1);
-        		
-//        		Denne her skal have en ny kasse Sebastian ;)
-// 			J_LableStuffs: ((X.lang()[10] + Player.getPlayerPlace(1));)
 
-            P1_label.setText(X.lang()[0] + Player.getPlayerScorre(1));
+        if (player_switch == 0) {
+        	int[] roll = Roll.Roll();
+        	
+        		Player.setPlayerPlace(true, roll[2]);
+        		Player.setPlayerScorre(true);
+        		
+//        	Denne her skal have en ny kasse Sebastian ;)
+// 			J_LableStuffs: ((X.lang()[10] + Player.getPlayerPlace(true));)
+
+            P1_label.setText(X.lang()[0] + Player.getPlayerScorre(true));
             player_turn.setText(X.lang()[3]);
             message.setText(X.lang()[9] + roll[0] + " and " + roll[1]);
-        	player_switch = 1;
+            player_switch = 1;
+            
         } else if (player_switch == 1) {
-    		Player.setPlayerPlace(2, Player.getPlayerPlace(2), roll[2]);
-    		Player.setPlayerScorre(2);
-    	
+        	int[] roll = Roll.Roll();
+        	
+    			Player.setPlayerPlace(false, roll[2]);
+    			Player.setPlayerScorre(false);
+    		
 //    		Denne her skal have en ny kasse Sebastian ;)
-//			J_LableStuffs: ((X.lang()[10] + Player.getPlayerPlace(2));)
+//			J_LableStuffs: ((X.lang()[10] + Player.getPlayerPlace(false));)
 
-        P1_label.setText(X.lang()[0] + Player.getPlayerScorre(2));
-        player_turn.setText(X.lang()[3]);
-        message.setText(X.lang()[9] + roll[0] + " and " + roll[1]);
-        	player_switch = 0;
+    			P2_label.setText(X.lang()[0] + Player.getPlayerScorre(false));
+    			player_turn.setText(X.lang()[3]);
+    			message.setText(X.lang()[9] + roll[0] + " and " + roll[1]);
+    			player_switch = 0;
         }
     };
     
