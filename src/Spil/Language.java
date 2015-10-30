@@ -23,10 +23,10 @@ public class Language {
 		sent2 = "Player 1's turn: ";
 		sent3 = "Player 2's turn: ";
 		sent4 = "Throw Dice";
-		sent5 = "Terningespil";
-		sent6 = "Spillerposition!";
-		sent7 = "Spiller 1 position: ";
-		sent8 = "Spiller 2 position: ";
+		sent5 = "The Dice Game";
+		sent6 = "Player position!";
+		sent7 = "Player 1 position: ";
+		sent8 = "Player 2 position: ";
 		sent9 = "You rolled: ";
 		sent10 = "You landed on ";
 		
