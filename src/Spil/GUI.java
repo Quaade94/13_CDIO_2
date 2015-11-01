@@ -78,7 +78,7 @@ public class GUI implements ActionListener {
         frame.add(container2, BorderLayout.CENTER);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setTitle(X.lang()[5]);
-        frame.setSize(450, 400);
+        frame.setSize(600, 400);
         frame.setResizable(false);
         //frame.pack();
         frame.setVisible(true);
@@ -120,7 +120,7 @@ public class GUI implements ActionListener {
             
             
             
-            player1_map.setText(X.lang()[7]+Player.getPlayerPlace(true)+". ");
+            player1_map.setText(X.lang()[7]+Player.getPlayerPlace(true)+". "+Board.getFeltNavn(Player.getPlayerPlace(true)));
             
             player_switch = 1;
             
@@ -140,7 +140,7 @@ public class GUI implements ActionListener {
     			player_turn.setText(X.lang()[2]);
     			message.setText(X.lang()[9] + roll[0] + " and " + roll[1]);
     			
-    			player2_map.setText(X.lang()[8]+Player.getPlayerPlace(false)+". ");
+    			player2_map.setText(X.lang()[8]+Player.getPlayerPlace(false)+". "+Board.getFeltNavn(Player.getPlayerPlace(false)));
     			
     			player_switch = 0;
         }
