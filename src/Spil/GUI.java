@@ -128,7 +128,7 @@ public class GUI implements ActionListener {
 //    		Denne her skal have en ny kasse Sebastian ;)
 //			J_LableStuffs: ((X.lang()[10] + Player.getPlayerPlace(false));)
 
-    			P2_label.setText(X.lang()[0] + Player.getPlayerScorre(false));
+    			P2_label.setText(X.lang()[1] + Player.getPlayerScorre(false));
     			player_turn.setText(X.lang()[3]);
     			message.setText(X.lang()[9] + roll[0] + " and " + roll[1]);
     			player_switch = 0;
