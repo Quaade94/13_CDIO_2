@@ -117,7 +117,15 @@ public class GUI implements ActionListener {
             P1_label.setText(X.lang()[0] + Player.getPlayerScorre(true));
             player_turn.setText(X.lang()[3]);
             message.setText(X.lang()[9] + roll[0] + " and " + roll[1]);
+            
+            
+            
+            player1_map.setText(X.lang()[7]+Player.getPlayerPlace(true));
+            
             player_switch = 1;
+            
+            
+            
             
         } else if (player_switch == 1) {
         	int[] roll = Roll.Roll();
@@ -129,8 +137,11 @@ public class GUI implements ActionListener {
 //			J_LableStuffs: ((X.lang()[10] + Player.getPlayerPlace(false));)
 
     			P2_label.setText(X.lang()[1] + Player.getPlayerScorre(false));
-    			player_turn.setText(X.lang()[3]);
+    			player_turn.setText(X.lang()[2]);
     			message.setText(X.lang()[9] + roll[0] + " and " + roll[1]);
+    			
+    			player2_map.setText(X.lang()[8]+Player.getPlayerPlace(false));
+    			
     			player_switch = 0;
         }
     };
