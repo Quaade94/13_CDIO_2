@@ -7,8 +7,8 @@ public class Spiller {
 	private int Player1Scorre = 1000;
 	private int Player2Scorre = 1000;
 
-	private int Player1Place = 0;
-	private int Player2Place = 0;
+	private int Player1Place = 1;
+	private int Player2Place = 1;
 
 	public void setPlayerPlace(boolean PlayerNr, int RollSum) {
 
@@ -24,9 +24,9 @@ public class Spiller {
 
 //			System.out.println("Place after roll " + Player1Place);
 			
-			if (Player1Place > 10) {
+			if (Player1Place > 11) {
 
-				Player1Place = Player1Place - 10;
+				Player1Place = Player1Place - 11;
 			}
 //			System.out.println("Place after -10  " + Player1Place);
 		}	
@@ -42,9 +42,9 @@ public class Spiller {
 
 //				System.out.println("Place after roll " + Player2Place);
 				
-				if (Player2Place > 10) {
+				if (Player2Place > 11) {
 
-					Player2Place = Player2Place - 10;
+					Player2Place = Player2Place - 11;
 				}
 				
 //				System.out.println("Place after -10  " + Player2Place);

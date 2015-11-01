@@ -44,17 +44,17 @@ public class Spilleplade {
 	 private int NyScorre = 0;
 */
 	private int[] Felter = { 250, -100, 100, -20, 180, 0, -70, 60, -80, -50, 650 };
-	private String[] FeltNavn = { "Tower", "Crater", "Palace gates", "Cold Desert", "Cold Desert", "Monastery", "Black cave", "Huts in the mountain", "The Werewall", "The pit", "Goldmine" };
+	private String[] FeltNavn = { "Tower", "Crater", "Palace gates", "Cold Desert", "Walled city", "Monastery", "Black cave", "Huts in the mountain", "The Werewall", "The pit", "Goldmine" };
 
 
 	public int getFeltEffekt(int Spillerfelt) {
 
-		return Felter[Spillerfelt];
+		return Felter[Spillerfelt-1];
 	}
 
 	public String getFeltNavn(int Spillerfelt) {
 
-		return FeltNavn[Spillerfelt];
+		return FeltNavn[Spillerfelt-1];
 	}
 
 }

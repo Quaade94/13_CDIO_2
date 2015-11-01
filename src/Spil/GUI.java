@@ -120,7 +120,7 @@ public class GUI implements ActionListener {
             
             
             
-            player1_map.setText(X.lang()[7]+Player.getPlayerPlace(true));
+            player1_map.setText(X.lang()[7]+Player.getPlayerPlace(true)+". ");
             
             player_switch = 1;
             
@@ -140,7 +140,7 @@ public class GUI implements ActionListener {
     			player_turn.setText(X.lang()[2]);
     			message.setText(X.lang()[9] + roll[0] + " and " + roll[1]);
     			
-    			player2_map.setText(X.lang()[8]+Player.getPlayerPlace(false));
+    			player2_map.setText(X.lang()[8]+Player.getPlayerPlace(false)+". ");
     			
     			player_switch = 0;
         }
