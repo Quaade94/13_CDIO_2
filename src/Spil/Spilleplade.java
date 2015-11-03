@@ -44,7 +44,7 @@ public class Spilleplade {
 	 private int NyScorre = 0;
 */
 	private int[] Felter = { 250, -100, 100, -20, 180, 0, -70, 60, -80, -50, 650 };
-	private String[] FeltNavn = { "Tower", "Crater", "Palace gates", "Cold Desert", "Walled city", "Monastery", "Black cave", "Huts in the mountain", "The Werewall", "The pit", "Goldmine" };
+	private String[] FeltNavn = { "Tower", "Crater", "Palace Gates", "Cold Desert", "Walled City", "Monastery", "Black Cave", "Huts in the Mountain", "The Werewall", "The Pit", "Goldmine" };
 
 
 	public int getFeltEffekt(int Spillerfelt) {

@@ -7,8 +7,8 @@ public class Spiller {
 	private int Player1Scorre = 1000;
 	private int Player2Scorre = 1000;
 
-	private int Player1Place = 1;
-	private int Player2Place = 1;
+	private int Player1Place = 0;
+	private int Player2Place = 0;
 
 	public void setPlayerPlace(boolean PlayerNr, int RollSum) {
 
