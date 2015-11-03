@@ -23,7 +23,8 @@ public class GUI implements ActionListener {
     private JLabel map_title = new JLabel(X.lang()[6]);
     private JLabel player1_map = new JLabel(X.lang()[7]);
     private JLabel player2_map = new JLabel(X.lang()[8]);
-    private JLabel message = new JLabel(X.lang()[9]);
+    private JLabel roll_msg = new JLabel(X.lang()[9]);
+    private JLabel message = new JLabel(X.lang()[10]);
     private JFrame frame = new JFrame();
 
     public GUI() {
@@ -65,13 +66,21 @@ public class GUI implements ActionListener {
         JPanel panel3 = new JPanel();
         panel3.setBorder(BorderFactory.createEmptyBorder(30, 30, 10, 30));
         panel3.setLayout(new GridLayout(0,1));
-        panel3.add(message);
+        panel3.add(roll_msg);
         panel3.add(button);
         panel3.setBackground(Color.lightGray);
+        
+        //panel med meddelelse
+        JPanel message_panel = new JPanel();
+        message_panel.setBorder(BorderFactory.createEmptyBorder(30, 30, 10, 30));
+        message_panel.setLayout(new GridBagLayout());
+        message_panel.add(message);
+       	message_panel.setBackground(Color.lightGray);
         
         //placere knap under text og map
         container2.setLayout(new GridLayout(0,1));
         container2.add(container);
+        container2.add(message_panel);
         container2.add(panel3);
         
         // s�tter rammen op
@@ -91,13 +100,13 @@ public class GUI implements ActionListener {
 //            P1_points = P1_points + roll[2]; //skal vaere spillers totale points
 //            P1_label.setText(X.lang()[0] + P1_points);
 //            player_turn.setText(X.lang()[3]);
-//            message.setText(X.lang()[9] + roll[0] + " and " + roll[1]);
+//            roll_msg.setText(X.lang()[9] + roll[0] + " and " + roll[1]);
 //        	player_switch = 1;
 //        } else if (player_switch == 1) {
 //            P2_points = P2_points + roll[2]; //Not actual points plz mk plair cls
 //            P2_label.setText(X.lang()[1] + P2_points);
 //            player_turn.setText(X.lang()[2]);
-//            message.setText(X.lang()[9] + roll[0] + " and " + roll[1]);
+//            roll_msg.setText(X.lang()[9] + roll[0] + " and " + roll[1]);
 //        	player_switch = 0;
 //        }
 //    };
@@ -113,20 +122,15 @@ public class GUI implements ActionListener {
         		
 //        	Denne her skal have en ny kasse Sebastian ;)
 // 			J_LableStuffs: ((X.lang()[10] + Player.getPlayerPlace(true));)
-
+        	
             P1_label.setText(X.lang()[0] + Player.getPlayerScorre(true));
             player_turn.setText(X.lang()[3]);
-            message.setText(X.lang()[9] + roll[0] + " and " + roll[1]);
-            
-            
-            
+            roll_msg.setText(X.lang()[9] + roll[0] + " and " + roll[1]);
+            message.setText(X.lang()[10] + Player.getPlayerPlace(true));
             player1_map.setText(X.lang()[7]+Player.getPlayerPlace(true)+". "+Board.getFeltNavn(Player.getPlayerPlace(true)));
             
             player_switch = 1;
-            
-            
-            
-            
+             
         } else if (player_switch == 1) {
         	int[] roll = Roll.Roll();
         	
@@ -138,11 +142,13 @@ public class GUI implements ActionListener {
 
     			P2_label.setText(X.lang()[1] + Player.getPlayerScorre(false));
     			player_turn.setText(X.lang()[2]);
-    			message.setText(X.lang()[9] + roll[0] + " and " + roll[1]);
-    			
+    			roll_msg.setText(X.lang()[9] + roll[0] + " and " + roll[1]);
+                message.setText(X.lang()[10] + Player.getPlayerPlace(false));
     			player2_map.setText(X.lang()[8]+Player.getPlayerPlace(false)+". "+Board.getFeltNavn(Player.getPlayerPlace(false)));
     			
     			player_switch = 0;
+        } else {
+        	System.out.println("Fejl i spillerskift");
         }
     };
     
