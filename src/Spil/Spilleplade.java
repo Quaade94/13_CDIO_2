@@ -43,9 +43,10 @@ public class Spilleplade {
 	 private int NewFelt = 0;
 	 private int NyScorre = 0;
 */
+	Language X = new Language();
 	private int[] Felter = { 250, -100, 100, -20, 180, 0, -70, 60, -80, -50, 650 };
-	private String[] FeltNavn = { "Tower", "Crater", "Palace Gates", "Cold Desert", "Walled City", "Monastery", "Black Cave", "Huts in the Mountain", "The Werewall", "The Pit", "Goldmine" };
-
+	private String[] FeltNavn = { X.lang()[14], X.lang()[15], X.lang()[16], X.lang()[17], X.lang()[18], X.lang()[19], X.lang()[20], X.lang()[21], X.lang()[22], X.lang()[23], X.lang()[24] };
+	
 
 	public int getFeltEffekt(int Spillerfelt) {
 

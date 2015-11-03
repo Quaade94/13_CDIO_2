@@ -16,7 +16,17 @@ public class Language {
 	private String sent11;
 	private String sent12;
 	private String sent13;
-
+	private String sent14;
+	private String sent15;
+	private String sent16;
+	private String sent17;
+	private String sent18;
+	private String sent19;
+	private String sent20;
+	private String sent21;
+	private String sent22;
+	private String sent23;
+	private String sent24;
 	
 	
 	public String[] lang() {
@@ -35,11 +45,21 @@ public class Language {
 		sent11 = " and gained";
 		sent12 = " and lost";
 		sent13 = "You are at the start";
+		sent14 = "Tower";
+		sent15 = "Crater";
+		sent16 = "Palace Gates";
+		sent17 = "Cold Desert";
+		sent18 = "Walled City";
+		sent19 = "Monastery";
+		sent20 = "Black Cave";
+		sent21 = "Huts in the Mountain";
+		sent22 = "The Werewall";
+		sent23 = "The Pit";
+		sent24 = "Goldmine";
 		
-		
-		String [] word = {sent0 , sent1 , sent2 , sent3 , sent4 , sent5 , sent6 , sent7, sent8, sent9, sent10, sent11, sent12, sent13};
+		String [] word = {sent0 , sent1 , sent2 , sent3 , sent4 , sent5 , sent6 , sent7, sent8, sent9, sent10, sent11, sent12, sent13, sent14, sent15, sent16, sent17, sent18, sent19, sent20, sent21, sent22, sent23, sent24};
 		return word;
-
+		
 	
 	
 	
