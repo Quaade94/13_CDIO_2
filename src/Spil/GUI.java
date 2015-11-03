@@ -130,7 +130,7 @@ public class GUI implements ActionListener {
 				message.setText(X.lang()[10] + Board.getFeltNavn(Player.getPlayerPlace(true)) + X.lang()[11]  + " " + Board.getFeltEffekt(Player.getPlayerPlace(true)));	
 			}
 			else if(Board.getFeltEffekt(Player.getPlayerPlace(true))<0){
-				message.setText(X.lang()[10] + Board.getFeltNavn(Player.getPlayerPlace(true)) + X.lang()[12]  + " " + Board.getFeltEffekt(Player.getPlayerPlace(true)));	
+				message.setText(X.lang()[10] + Board.getFeltNavn(Player.getPlayerPlace(true)) + X.lang()[12]  + " " + Math.abs(Board.getFeltEffekt(Player.getPlayerPlace(true))));	
 			}
 			player1_map.setText(X.lang()[7] + Player.getPlayerPlace(true)+". "+ Board.getFeltNavn(Player.getPlayerPlace(true)));
 
@@ -148,11 +148,11 @@ public class GUI implements ActionListener {
 			P2_label.setText(X.lang()[1] + Player.getPlayerScorre(false));
 			player_turn.setText(X.lang()[2]);
 			roll_msg.setText(X.lang()[9] + roll[0] + " and " + roll[1]);
-			if(Board.getFeltEffekt(Player.getPlayerPlace(true))>=0){
-				message.setText(X.lang()[10] + Board.getFeltNavn(Player.getPlayerPlace(false)) + X.lang()[11]  + " " + Board.getFeltEffekt(Player.getPlayerPlace(true)));	
+			if(Board.getFeltEffekt(Player.getPlayerPlace(false))>=0){
+				message.setText(X.lang()[10] + Board.getFeltNavn(Player.getPlayerPlace(false)) + X.lang()[11]  + " " + Board.getFeltEffekt(Player.getPlayerPlace(false)));	
 			}
-			else if(Board.getFeltEffekt(Player.getPlayerPlace(true))<0){
-				message.setText(X.lang()[10] + Board.getFeltNavn(Player.getPlayerPlace(false)) + X.lang()[12]  + " " + Board.getFeltEffekt(Player.getPlayerPlace(true)));	
+			else if(Board.getFeltEffekt(Player.getPlayerPlace(false))<0){
+				message.setText(X.lang()[10] + Board.getFeltNavn(Player.getPlayerPlace(false)) + X.lang()[12]  + " " + Math.abs(Board.getFeltEffekt(Player.getPlayerPlace(false))));	
 			}    			player2_map.setText(X.lang()[8]+Player.getPlayerPlace(false)+". "+ Board.getFeltNavn(Player.getPlayerPlace(false)));
 			player_switch = 0;
 		} else {
