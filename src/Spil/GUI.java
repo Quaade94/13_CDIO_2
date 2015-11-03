@@ -17,15 +17,17 @@ public class GUI implements ActionListener {
 	private int P1_points = 1000;
 	private int P2_points = 1000;
 	private int player_switch = 0;
-	private JLabel P1_label = new JLabel(X.lang()[0] + P1_points, SwingConstants.CENTER);
-	private JLabel P2_label = new JLabel(X.lang()[1] + P2_points, SwingConstants.CENTER);;
+	private JLabel P1_label = new JLabel(X.lang()[0] + P1_points);
+	private JLabel P2_label = new JLabel(X.lang()[1] + P2_points);;
 	private JLabel player_turn = new JLabel(X.lang()[2], SwingConstants.CENTER);
-	private JLabel map_title = new JLabel(X.lang()[6]);
+	//private JLabel map_title = new JLabel(X.lang()[6]);
 	private JLabel player1_map = new JLabel(X.lang()[7]);
 	private JLabel player2_map = new JLabel(X.lang()[8]);
 	private JLabel roll_msg = new JLabel(X.lang()[9]);
 	private JLabel message = new JLabel(X.lang()[13]);
 	private JFrame frame = new JFrame();
+	private JLabel player1 = new JLabel(X.lang()[26]);
+	private JLabel player2 = new JLabel(X.lang()[27]);
 
 	public GUI() {
 
@@ -35,8 +37,10 @@ public class GUI implements ActionListener {
 
 		//label customization
 		player_turn.setFont(new Font("Sherif", Font.PLAIN, 20));
-		map_title.setFont(new Font("Sherif", Font.PLAIN, 20));
-
+		player1.setFont(new Font("Sherif", Font.PLAIN, 20));
+		player2.setFont(new Font("Sherif", Font.PLAIN, 20));
+		
+		
 		//container panel
 		JPanel container = new JPanel();
 		JPanel container2 = new JPanel();
@@ -45,17 +49,17 @@ public class GUI implements ActionListener {
 		JPanel panel = new JPanel();
 		panel.setBorder(BorderFactory.createEmptyBorder(30, 30, 10, 30));
 		panel.setLayout(new GridLayout(0,1));
-		panel.add(player_turn);
+		panel.add(player1);
 		panel.add(P1_label);
-		panel.add(P2_label);
+		panel.add(player1_map);
 		panel.setBackground(Color.lightGray);
 
 		// panel med map??
 		JPanel panel2 = new JPanel();
 		panel2.setBorder(BorderFactory.createEmptyBorder(30, 30, 10, 30));
 		panel2.setLayout(new GridLayout(0,1));
-		panel2.add(map_title);
-		panel2.add(player1_map);
+		panel2.add(player2);
+		panel2.add(P2_label);
 		panel2.add(player2_map);
 		panel2.setBackground(Color.lightGray);
 
@@ -66,10 +70,12 @@ public class GUI implements ActionListener {
 
 		//panel med knap
 		JPanel panel3 = new JPanel();
+		panel3.add(player_turn);
 		panel3.setBorder(BorderFactory.createEmptyBorder(30, 30, 10, 30));
-		panel3.setLayout(new GridLayout(0,1));
-		panel3.add(roll_msg);
+		panel3.setLayout(new GridLayout(1,2));
 		panel3.add(button);
+		panel3.add(roll_msg);
+		//panel3.add(button);
 		panel3.setBackground(Color.lightGray);
 
 		//panel med meddelelse
@@ -128,7 +134,7 @@ public class GUI implements ActionListener {
 			player_turn.setText(X.lang()[3]);
 			roll_msg.setText(X.lang()[9] + roll[0] + " and " + roll[1]);
 			if(Board.getFeltEffekt(Player.getPlayerPlace(true))>=0){
-				message.setText(X.lang()[10] + Board.getFeltNavn(Player.getPlayerPlace(true)) + X.lang()[11]  + " " + Board.getFeltEffekt(Player.getPlayerPlace(true)) + " " + X.lang()[25]);	
+				message.setText(X.lang()[10] + Board.getFeltNavn(Player.getPlayerPlace(true)) + X.lang()[11]  + " " + Board.getFeltEffekt(Player.getPlayerPlace(true))+ " " + X.lang()[25]);	
 			}
 			else if(Board.getFeltEffekt(Player.getPlayerPlace(true))<0){
 				message.setText(X.lang()[10] + Board.getFeltNavn(Player.getPlayerPlace(true)) + X.lang()[12]  + " " + Math.abs(Board.getFeltEffekt(Player.getPlayerPlace(true))) + " " + X.lang()[25]);	
