@@ -13,6 +13,9 @@ public class Language {
 	private String sent8;
 	private String sent9;
 	private String sent10;
+	private String sent11;
+	private String sent12;
+	private String sent13;
 
 	
 	
@@ -29,9 +32,12 @@ public class Language {
 		sent8 = "Player 2 position: ";
 		sent9 = "You rolled: ";
 		sent10 = "You landed on ";
+		sent11 = " and gained";
+		sent12 = " and lost";
+		sent13 = "You are at the start";
 		
 		
-		String [] word = {sent0 , sent1 , sent2 , sent3 , sent4 , sent5 , sent6 , sent7, sent8, sent9, sent10};
+		String [] word = {sent0 , sent1 , sent2 , sent3 , sent4 , sent5 , sent6 , sent7, sent8, sent9, sent10, sent11, sent12, sent13};
 		return word;
 
 	

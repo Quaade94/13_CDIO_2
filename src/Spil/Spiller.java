@@ -68,18 +68,18 @@ public class Spiller {
 	
 	public void setPlayerScorre (boolean PlayerNr){
 		
-		System.out.println("Spiller = " + PlayerNr);
+//		System.out.println("Spiller = " + PlayerNr);
 		
 		if (PlayerNr == true){
 			
 			Player1Scorre = Player1Scorre + Plade.getFeltEffekt(Player1Place);
-			System.out.println(Plade.getFeltEffekt(Player1Place));
-			System.out.println(Player1Scorre);
+//			System.out.println(Plade.getFeltEffekt(Player1Place));
+//			System.out.println(Player1Scorre);
 		}else if (PlayerNr == false){
 			
 			Player2Scorre = Player2Scorre + Plade.getFeltEffekt(Player2Place);
-			System.out.println(Plade.getFeltEffekt(Player2Place));
-			System.out.println(Player2Scorre);
+//			System.out.println(Plade.getFeltEffekt(Player2Place));
+//			System.out.println(Player2Scorre);
 		}
 	}
 	public int getPlayerScorre(boolean PlayerNr){
