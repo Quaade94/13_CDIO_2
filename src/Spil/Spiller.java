@@ -13,7 +13,7 @@ public class Spiller {
 	public void setPlayerPlace(boolean PlayerNr, int RollSum) {
 
 		
-		System.out.println(PlayerNr);
+		//System.out.println(PlayerNr);
 		
 		if (PlayerNr == true) {
 

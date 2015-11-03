@@ -44,6 +44,7 @@ public class GUI implements ActionListener {
 		//panel med text
 		JPanel panel = new JPanel();
 		panel.setBorder(BorderFactory.createEmptyBorder(30, 30, 10, 30));
+		panel.setLayout(new GridLayout(0,1));
 		panel.add(player_turn);
 		panel.add(P1_label);
 		panel.add(P2_label);
@@ -127,10 +128,10 @@ public class GUI implements ActionListener {
 			player_turn.setText(X.lang()[3]);
 			roll_msg.setText(X.lang()[9] + roll[0] + " and " + roll[1]);
 			if(Board.getFeltEffekt(Player.getPlayerPlace(true))>=0){
-				message.setText(X.lang()[10] + Board.getFeltNavn(Player.getPlayerPlace(true)) + X.lang()[11]  + " " + Board.getFeltEffekt(Player.getPlayerPlace(true)));	
+				message.setText(X.lang()[10] + Board.getFeltNavn(Player.getPlayerPlace(true)) + X.lang()[11]  + " " + Board.getFeltEffekt(Player.getPlayerPlace(true)) + " " + X.lang()[25]);	
 			}
 			else if(Board.getFeltEffekt(Player.getPlayerPlace(true))<0){
-				message.setText(X.lang()[10] + Board.getFeltNavn(Player.getPlayerPlace(true)) + X.lang()[12]  + " " + Math.abs(Board.getFeltEffekt(Player.getPlayerPlace(true))));	
+				message.setText(X.lang()[10] + Board.getFeltNavn(Player.getPlayerPlace(true)) + X.lang()[12]  + " " + Math.abs(Board.getFeltEffekt(Player.getPlayerPlace(true))) + " " + X.lang()[25]);	
 			}
 			player1_map.setText(X.lang()[7] + Player.getPlayerPlace(true)+". "+ Board.getFeltNavn(Player.getPlayerPlace(true)));
 
@@ -149,10 +150,10 @@ public class GUI implements ActionListener {
 			player_turn.setText(X.lang()[2]);
 			roll_msg.setText(X.lang()[9] + roll[0] + " and " + roll[1]);
 			if(Board.getFeltEffekt(Player.getPlayerPlace(false))>=0){
-				message.setText(X.lang()[10] + Board.getFeltNavn(Player.getPlayerPlace(false)) + X.lang()[11]  + " " + Board.getFeltEffekt(Player.getPlayerPlace(false)));	
+				message.setText(X.lang()[10] + Board.getFeltNavn(Player.getPlayerPlace(false)) + X.lang()[11]  + " " + Board.getFeltEffekt(Player.getPlayerPlace(false)) + " " + X.lang()[25]);	
 			}
 			else if(Board.getFeltEffekt(Player.getPlayerPlace(false))<0){
-				message.setText(X.lang()[10] + Board.getFeltNavn(Player.getPlayerPlace(false)) + X.lang()[12]  + " " + Math.abs(Board.getFeltEffekt(Player.getPlayerPlace(false))));	
+				message.setText(X.lang()[10] + Board.getFeltNavn(Player.getPlayerPlace(false)) + X.lang()[12]  + " " + Math.abs(Board.getFeltEffekt(Player.getPlayerPlace(false))) + " " + X.lang()[25]);	
 			}    			player2_map.setText(X.lang()[8]+Player.getPlayerPlace(false)+". "+ Board.getFeltNavn(Player.getPlayerPlace(false)));
 			player_switch = 0;
 		} else {
