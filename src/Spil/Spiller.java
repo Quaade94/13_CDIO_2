@@ -29,11 +29,7 @@ public class Spiller {
 				Player1Place = Player1Place - 11;
 			}
 //			System.out.println("Place after -10  " + Player1Place);
-		}	
-			
-
-
-			if (PlayerNr == false) {
+		}else if (PlayerNr == false) {
 
 //				System.out.println("Place Before roll " + Player2Place);
 //				System.out.println("Roll " + RollSum);
@@ -60,12 +56,10 @@ public class Spiller {
 		if (PlayerNr == true){
 			
 			ReturElement = Player1Place;
-		}
-		if (PlayerNr == false){
+		}else if (PlayerNr == false){
 			
 			ReturElement = Player2Place;
-		}
-		else {
+		}else {
 			System.out.println("Fejl i public class Spiller: getPlayerPlace");
 		}
 
@@ -81,8 +75,7 @@ public class Spiller {
 			Player1Scorre = Player1Scorre + Plade.getFeltEffekt(Player1Place);
 			System.out.println(Plade.getFeltEffekt(Player1Place));
 			System.out.println(Player1Scorre);
-		}
-		if (PlayerNr == false){
+		}else if (PlayerNr == false){
 			
 			Player2Scorre = Player2Scorre + Plade.getFeltEffekt(Player2Place);
 			System.out.println(Plade.getFeltEffekt(Player2Place));
@@ -97,8 +90,7 @@ public class Spiller {
 			
 			ReturElement = Player1Scorre;
 			
-		}
-		if (PlayerNr == false){
+		}else if (PlayerNr == false){
 			
 			ReturElement = Player2Scorre;
 			
@@ -106,12 +98,4 @@ public class Spiller {
 		return ReturElement;
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-
 }
