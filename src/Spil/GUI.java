@@ -28,7 +28,8 @@ public class GUI implements ActionListener {
 	private JFrame frame = new JFrame();
 	private JLabel player1 = new JLabel(X.lang()[26]);
 	private JLabel player2 = new JLabel(X.lang()[27]);
-
+	
+	
 	public GUI() {
 
 		// knappen
@@ -39,6 +40,7 @@ public class GUI implements ActionListener {
 		player_turn.setFont(new Font("Sherif", Font.PLAIN, 20));
 		player1.setFont(new Font("Sherif", Font.PLAIN, 20));
 		player2.setFont(new Font("Sherif", Font.PLAIN, 20));
+		
 		
 		
 		//container panel
@@ -121,6 +123,8 @@ public class GUI implements ActionListener {
 
 	// Hvad sker der, naar knappen bliver trykket:
 	public void actionPerformed(ActionEvent F) {
+		
+				
 		if (player_switch == 0) {
 			int[] roll = Roll.Roll();
 
@@ -133,7 +137,15 @@ public class GUI implements ActionListener {
 			P1_label.setText(X.lang()[0] + Player.getPlayerScorre(true));
 			player_turn.setText(X.lang()[3]);
 			roll_msg.setText(X.lang()[9] + roll[0] + " and " + roll[1]);
-			if(Board.getFeltEffekt(Player.getPlayerPlace(true))>=0){
+			
+			
+			
+			if(Player.getPlayerScorre(true)>2999){
+				message.setFont(new Font("Sherif", Font.PLAIN, 35));
+				message.setText(X.lang()[28]);
+			}
+			
+			else if(Board.getFeltEffekt(Player.getPlayerPlace(true))>=0){
 				message.setText(X.lang()[10] + Board.getFeltNavn(Player.getPlayerPlace(true)) + X.lang()[11]  + " " + Board.getFeltEffekt(Player.getPlayerPlace(true))+ " " + X.lang()[25]);	
 			}
 			else if(Board.getFeltEffekt(Player.getPlayerPlace(true))<0){
@@ -141,7 +153,9 @@ public class GUI implements ActionListener {
 			}
 			player1_map.setText(X.lang()[7] + Player.getPlayerPlace(true)+". "+ Board.getFeltNavn(Player.getPlayerPlace(true)));
 
-			player_switch = 1;
+			if (Player.getPlayerPlace(true)!=9){
+				player_switch = 1;
+			}
 
 		} else if (player_switch == 1) {
 			int[] roll = Roll.Roll();
@@ -155,13 +169,23 @@ public class GUI implements ActionListener {
 			P2_label.setText(X.lang()[1] + Player.getPlayerScorre(false));
 			player_turn.setText(X.lang()[2]);
 			roll_msg.setText(X.lang()[9] + roll[0] + " and " + roll[1]);
-			if(Board.getFeltEffekt(Player.getPlayerPlace(false))>=0){
+			
+			
+			if (Player.getPlayerScorre(false)>2999){
+				message.setFont(new Font("Sherif", Font.PLAIN, 35));
+				message.setText(X.lang()[29]);
+			}
+			
+			else if(Board.getFeltEffekt(Player.getPlayerPlace(false))>=0){
 				message.setText(X.lang()[10] + Board.getFeltNavn(Player.getPlayerPlace(false)) + X.lang()[11]  + " " + Board.getFeltEffekt(Player.getPlayerPlace(false)) + " " + X.lang()[25]);	
 			}
 			else if(Board.getFeltEffekt(Player.getPlayerPlace(false))<0){
 				message.setText(X.lang()[10] + Board.getFeltNavn(Player.getPlayerPlace(false)) + X.lang()[12]  + " " + Math.abs(Board.getFeltEffekt(Player.getPlayerPlace(false))) + " " + X.lang()[25]);	
 			}    			player2_map.setText(X.lang()[8]+Player.getPlayerPlace(false)+". "+ Board.getFeltNavn(Player.getPlayerPlace(false)));
-			player_switch = 0;
+			if (Player.getPlayerPlace(false)!=9){
+				player_switch = 0;
+			}
+						
 		} else {
 			System.out.println("Fejl i spillerskift");
 		}

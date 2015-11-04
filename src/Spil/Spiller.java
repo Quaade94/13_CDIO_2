@@ -88,9 +88,13 @@ public class Spiller {
 		
 		if (PlayerNr == true){
 			
+						
 			ReturElement = Player1Scorre;
 			
 		}else if (PlayerNr == false){
+			
+			
+			
 			
 			ReturElement = Player2Scorre;
 			
