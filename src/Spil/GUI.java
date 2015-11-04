@@ -28,14 +28,19 @@ public class GUI implements ActionListener {
 	private JFrame frame = new JFrame();
 	private JLabel player1 = new JLabel(X.lang()[26]);
 	private JLabel player2 = new JLabel(X.lang()[27]);
+	private JPanel panel3 = new JPanel();
+	private JButton button = new JButton(X.lang()[4]);
+
+	
+	
 	
 	
 	public GUI() {
 
 		// knappen
-		JButton button = new JButton(X.lang()[4]);
 		button.addActionListener(this);
 
+		
 		//label customization
 		player_turn.setFont(new Font("Sherif", Font.PLAIN, 20));
 		player1.setFont(new Font("Sherif", Font.PLAIN, 20));
@@ -71,7 +76,6 @@ public class GUI implements ActionListener {
 		container.add(panel2);
 
 		//panel med knap
-		JPanel panel3 = new JPanel();
 		panel3.add(player_turn);
 		panel3.setBorder(BorderFactory.createEmptyBorder(30, 30, 10, 30));
 		panel3.setLayout(new GridLayout(1,2));
@@ -141,6 +145,10 @@ public class GUI implements ActionListener {
 			if(Player.getPlayerScorre(true)>2999){
 				message.setFont(new Font("Sherif", Font.PLAIN, 35));
 				message.setText(X.lang()[28]);
+				player_turn.setText("");
+				button.setEnabled(false);
+				return;
+				
 			}
 			
 			else if(Board.getFeltEffekt(Player.getPlayerPlace(true))>=0){
@@ -151,7 +159,11 @@ public class GUI implements ActionListener {
 			}
 			player1_map.setText(X.lang()[7] + Player.getPlayerPlace(true)+". "+ Board.getFeltNavn(Player.getPlayerPlace(true)));
 
-			if (Player.getPlayerPlace(true)!=9){
+			if (Player.getPlayerPlace(false)==9){
+				player_turn.setText(X.lang()[2]);
+				player_switch = 0;
+						}
+			else {
 				player_turn.setText(X.lang()[3]);
 				player_switch = 1;
 			}
@@ -172,6 +184,9 @@ public class GUI implements ActionListener {
 			if (Player.getPlayerScorre(false)>2999){
 				message.setFont(new Font("Sherif", Font.PLAIN, 35));
 				message.setText(X.lang()[29]);
+				player_turn.setText("");
+				button.setEnabled(false);
+				return;
 			}
 			
 			else if(Board.getFeltEffekt(Player.getPlayerPlace(false))>=0){
@@ -180,11 +195,15 @@ public class GUI implements ActionListener {
 			else if(Board.getFeltEffekt(Player.getPlayerPlace(false))<0){
 				message.setText(X.lang()[10] + Board.getFeltNavn(Player.getPlayerPlace(false)) + X.lang()[12]  + " " + Math.abs(Board.getFeltEffekt(Player.getPlayerPlace(false))) + " " + X.lang()[25]);	
 			}    			player2_map.setText(X.lang()[8]+Player.getPlayerPlace(false)+". "+ Board.getFeltNavn(Player.getPlayerPlace(false)));
-			if (Player.getPlayerPlace(false)!=9){
-				player_turn.setText(X.lang()[2]);
-				player_switch = 0;
-			}
-						
+				if (Player.getPlayerPlace(false)==9){
+					player_turn.setText(X.lang()[3]);
+					player_switch = 1;
+							}
+				else {
+					player_turn.setText(X.lang()[2]);
+					player_switch = 0;
+				}
+									
 		} else {
 			System.out.println("Fejl i spillerskift");
 		}
