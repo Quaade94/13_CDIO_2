@@ -64,8 +64,8 @@ public class Language {
 		sent25 = "Gold";
 		sent26 = "Player 1";
 		sent27 = "Player 2";
-		sent28 = "Player 1 is a nigger!!";
-		sent29 = "Player 2 is a nigger!!";
+		sent28 = "Player 1 is a winner!!";
+		sent29 = "Player 2 is a winner!!";
 		
 		
 		String [] word = {sent0 , sent1 , sent2 , sent3 , sent4 , sent5 , sent6 , sent7, sent8, sent9, sent10, sent11, sent12, sent13, sent14, sent15, sent16, sent17, sent18, sent19, sent20, sent21, sent22, sent23, sent24, sent25, sent26, sent27, sent28, sent29};

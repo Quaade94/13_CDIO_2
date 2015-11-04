@@ -123,8 +123,7 @@ public class GUI implements ActionListener {
 
 	// Hvad sker der, naar knappen bliver trykket:
 	public void actionPerformed(ActionEvent F) {
-		
-				
+						
 		if (player_switch == 0) {
 			int[] roll = Roll.Roll();
 
@@ -135,7 +134,6 @@ public class GUI implements ActionListener {
 			// 			J_LableStuffs: ((X.lang()[10] + Player.getPlayerPlace(true));)
 
 			P1_label.setText(X.lang()[0] + Player.getPlayerScorre(true));
-			player_turn.setText(X.lang()[3]);
 			roll_msg.setText(X.lang()[9] + roll[0] + " and " + roll[1]);
 			
 			
@@ -154,6 +152,7 @@ public class GUI implements ActionListener {
 			player1_map.setText(X.lang()[7] + Player.getPlayerPlace(true)+". "+ Board.getFeltNavn(Player.getPlayerPlace(true)));
 
 			if (Player.getPlayerPlace(true)!=9){
+				player_turn.setText(X.lang()[3]);
 				player_switch = 1;
 			}
 
@@ -167,7 +166,6 @@ public class GUI implements ActionListener {
 			//			J_LableStuffs: ((X.lang()[10] + Player.getPlayerPlace(false));)
 
 			P2_label.setText(X.lang()[1] + Player.getPlayerScorre(false));
-			player_turn.setText(X.lang()[2]);
 			roll_msg.setText(X.lang()[9] + roll[0] + " and " + roll[1]);
 			
 			
@@ -183,6 +181,7 @@ public class GUI implements ActionListener {
 				message.setText(X.lang()[10] + Board.getFeltNavn(Player.getPlayerPlace(false)) + X.lang()[12]  + " " + Math.abs(Board.getFeltEffekt(Player.getPlayerPlace(false))) + " " + X.lang()[25]);	
 			}    			player2_map.setText(X.lang()[8]+Player.getPlayerPlace(false)+". "+ Board.getFeltNavn(Player.getPlayerPlace(false)));
 			if (Player.getPlayerPlace(false)!=9){
+				player_turn.setText(X.lang()[2]);
 				player_switch = 0;
 			}
 						
