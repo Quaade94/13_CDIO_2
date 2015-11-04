@@ -73,11 +73,19 @@ public class Spiller {
 		if (PlayerNr == true){
 			
 			Player1Scorre = Player1Scorre + Plade.getFeltEffekt(Player1Place);
-//			System.out.println(Plade.getFeltEffekt(Player1Place));
+			if (Player1Scorre < 0){
+				Player1Scorre = 0;
+			}
+			System.out.println(Plade.getFeltEffekt(Player1Place));
 //			System.out.println(Player1Scorre);
 		}else if (PlayerNr == false){
 			
 			Player2Scorre = Player2Scorre + Plade.getFeltEffekt(Player2Place);
+			
+			if (Player2Scorre < 0){
+				Player2Scorre = 0;
+			}
+			
 //			System.out.println(Plade.getFeltEffekt(Player2Place));
 //			System.out.println(Player2Scorre);
 		}
