@@ -105,7 +105,7 @@ public class GUI implements ActionListener {
 	public void actionPerformed(ActionEvent F) {
 
 		if (playerSwitch == 0) {
-			int[] roll = Roll.Roll();
+			int[] roll = Roll.roll();
 
 			Player.setPlayerPlace(true, roll[2]);
 			Player.setPlayerScorre(true);
@@ -140,7 +140,7 @@ public class GUI implements ActionListener {
 			}
 
 		} else if (playerSwitch == 1) {
-			int[] roll = Roll.Roll();
+			int[] roll = Roll.roll();
 
 			Player.setPlayerPlace(false, roll[2]);
 			Player.setPlayerScorre(false);

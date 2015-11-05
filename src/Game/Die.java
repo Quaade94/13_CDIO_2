@@ -2,75 +2,49 @@ package Game;
 
 public class Die {
 
-	private int Dice1;
-	private int Dice2;
-	private boolean PreMode;
+	private int dice1;
+	private int dice2;
+	private boolean preMode;
 	
-	
-
-//	Roll metoden generere to terning slag fra 2 til 12
-//	De bliver returneret som et array, hvor man kan tage dem ud hver for sig, eller bare summen af dem.
-//	Ved at ex. at skrive int[] roll = Roll.Roll();  , og derefter int dice1 = roll[0], defineres den ene ternings værdi, roll[1] giver den anden ternings værdi
-//	Ved at skrive roll[2], fås bare summen af terningslaget. Alt kommer ud som int'er.
-//	
-//	Kort eksempel på at bruge den:
-//	
-//		public static void main(String[] args) {
-//	
-//		Terninger Roll = new Terninger();
-//
-//		int[] roll = Roll.Roll();
-//
-//		System.out.println("Du slog: " + roll[0] + " og " + roll[1] + " summen er " + roll[2]);
-//	}
+	public void setPreDiceMode (boolean setMode){
 		
-	public void setPreDiceMode (boolean SetMode){
-		
-		PreMode = SetMode;
+		preMode = setMode;
 		
 	}
 	
-	public void setPreDiceValue (int D1, int D2){
+	public void setPreDiceValue (int d1, int d2){
 		
-		Dice1 = D1;
-		Dice2 = D2;
+		dice1 = d1;
+		dice2 = d2;
 		
 	}
 	
-	
-	
+	public int[] roll() {
 
-	public int[] Roll() {
+		int [] roll = {0,0,0};
 
-		int [] Roll = {0,0,0};
-
-		
-		
-		if (PreMode == true) {
+		if (preMode == true) {
 			
+			roll [0] = dice1;
+			roll [1] = dice2;
 			
-			Roll [0] = Dice1;
-			Roll [1] = Dice2;
+			int sum = dice1 + dice2;
 			
-			int Sum = Dice1 + Dice2;
-			
-			Roll [2] = Sum;
-		
+			roll [2] = sum;
 		}
 		
-		if (PreMode == false){
+		if (preMode == false){
 			
-			Dice1 = (int) (Math.random() * 6) + 1;
-			Dice2 = (int) (Math.random() * 6) + 1;
+			dice1 = (int) (Math.random() * 6) + 1;
+			dice2 = (int) (Math.random() * 6) + 1;
 
-			int Sum = Dice1 + Dice2;
+			int sum = dice1 + dice2;
 			
-			Roll [0] = Dice1;
-			Roll [1] = Dice2;
-			Roll [2] = Sum;
-			
+			roll [0] = dice1;
+			roll [1] = dice2;
+			roll [2] = sum;
 		}
 		
-		return Roll;
+		return roll;
 	}
 }

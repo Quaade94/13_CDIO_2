@@ -44,7 +44,7 @@ public class GameTest {
 		
 		int[] Forv = {4,4,8};
 		
-		int[] Roll = dice.Roll();
+		int[] Roll = dice.roll();
 		
 //		System.out.println(" Værdi 1 " + Forv[0] + " Værdi 2 " + Forv[1] +" Værdi 3 " + Forv[2] + " end");
 //		System.out.println(" Værdi 1 " + Roll[0] + " Værdi 2 " + Roll[1] +" Værdi 3 " + Roll[2] + " end");
@@ -71,7 +71,7 @@ public class GameTest {
 		dice.setPreDiceMode(true);
 		dice.setPreDiceValue(D1, D2);
 		
-		int [] Roll = dice.Roll();
+		int [] Roll = dice.roll();
 		
 		game.setPlayerPlace(true, Roll[2]);
 		
@@ -91,7 +91,7 @@ public class GameTest {
 		dice.setPreDiceMode(true);
 		dice.setPreDiceValue(D1, D2);
 		
-		Roll = dice.Roll();
+		Roll = dice.roll();
 		
 		game.setPlayerPlace(false, Roll[2]);
 		

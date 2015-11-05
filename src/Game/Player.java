@@ -4,8 +4,8 @@ public class Player {
 
 	GameBoard Plade = new GameBoard();
 
-	private int Player1Scorre = 1000;
-	private int Player2Scorre = 1000;
+	private int player1Score = 1000;
+	private int player2Score = 1000;
 
 	private int Player1Place = 0;
 	private int Player2Place = 0;
@@ -35,53 +35,53 @@ public class Player {
 	
 	public int getPlayerPlace(boolean PlayerNr){
 		
-		int ReturElement = -1;
+		int returnElement = -1;
 		
 		if (PlayerNr == true){
 			
-			ReturElement = Player1Place;
+			returnElement = Player1Place;
 		}else if (PlayerNr == false){
 			
-			ReturElement = Player2Place;
+			returnElement = Player2Place;
 		}else {
 			System.out.println("Fejl i public class Spiller: getPlayerPlace");
 		}
 
-		return ReturElement;
+		return returnElement;
 	}
 	
-	public void setPlayerScorre (boolean PlayerNr){
+	public void setPlayerScorre (boolean playerNo){
 		
-		if (PlayerNr == true){
+		if (playerNo == true){
 			
-			Player1Scorre = Player1Scorre + Plade.getFieldEffect(Player1Place);
-			if (Player1Scorre < 0){
-				Player1Scorre = 0;
+			player1Score = player1Score + Plade.getFieldEffect(Player1Place);
+			if (player1Score < 0){
+				player1Score = 0;
 			}
 			
-		}else if (PlayerNr == false){
+		}else if (playerNo == false){
 			
-			Player2Scorre = Player2Scorre + Plade.getFieldEffect(Player2Place);
+			player2Score = player2Score + Plade.getFieldEffect(Player2Place);
 			
-			if (Player2Scorre < 0){
-				Player2Scorre = 0;
+			if (player2Score < 0){
+				player2Score = 0;
 			}
 		}
 	}
-	public int getPlayerScorre(boolean PlayerNr){
+	public int getPlayerScorre(boolean playerNo){
 		
-		int ReturElement = 0;
+		int returnElement = 0;
 		
-		if (PlayerNr == true){
+		if (playerNo == true){
 						
-			ReturElement = Player1Scorre;
+			returnElement = player1Score;
 			
-		}else if (PlayerNr == false){
+		}else if (playerNo == false){
 
-			ReturElement = Player2Scorre;
+			returnElement = player2Score;
 			
 		}
-		return ReturElement;
+		return returnElement;
 	}
 	
 }
