@@ -7,42 +7,42 @@ public class Player {
 	private int player1Score = 1000;
 	private int player2Score = 1000;
 
-	private int Player1Place = 0;
-	private int Player2Place = 0;
+	private int player1Place = 0;
+	private int player2Place = 0;
 
-	public void setPlayerPlace(boolean PlayerNr, int RollSum) {
+	public void setPlayerPlace(boolean playerNr, int rollSum) {
 
 		
-		if (PlayerNr == true) {
+		if (playerNr == true) {
 			
-			Player1Place = Player1Place + RollSum;
+			player1Place = player1Place + rollSum;
 			
-			if (Player1Place > 11) {
+			if (player1Place > 11) {
 
-				Player1Place = Player1Place - 11;
+				player1Place = player1Place - 11;
 			}
 			
-		}else if (PlayerNr == false) {
+		}else if (playerNr == false) {
 				
-				Player2Place = Player2Place + RollSum;
+				player2Place = player2Place + rollSum;
 				
-				if (Player2Place > 11) {
+				if (player2Place > 11) {
 
-					Player2Place = Player2Place - 11;
+					player2Place = player2Place - 11;
 				}
 			}	
 	}
 	
-	public int getPlayerPlace(boolean PlayerNr){
+	public int getPlayerPlace(boolean playerNo){
 		
 		int returnElement = -1;
 		
-		if (PlayerNr == true){
+		if (playerNo == true){
 			
-			returnElement = Player1Place;
-		}else if (PlayerNr == false){
+			returnElement = player1Place;
+		}else if (playerNo == false){
 			
-			returnElement = Player2Place;
+			returnElement = player2Place;
 		}else {
 			System.out.println("Fejl i public class Spiller: getPlayerPlace");
 		}
@@ -54,14 +54,14 @@ public class Player {
 		
 		if (playerNo == true){
 			
-			player1Score = player1Score + Plade.getFieldEffect(Player1Place);
+			player1Score = player1Score + Plade.getFieldEffect(player1Place);
 			if (player1Score < 0){
 				player1Score = 0;
 			}
 			
 		}else if (playerNo == false){
 			
-			player2Score = player2Score + Plade.getFieldEffect(Player2Place);
+			player2Score = player2Score + Plade.getFieldEffect(player2Place);
 			
 			if (player2Score < 0){
 				player2Score = 0;
