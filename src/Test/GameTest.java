@@ -6,15 +6,15 @@ import org.junit.Test;
 
 import Game.Die;
 import Game.GUI;
-import Game.Game_board;
+import Game.GameBoard;
 import Game.Language;
 import Game.Player;
 
-public class Game_Test {
+public class GameTest {
 
 	GUI testgame = new GUI();
 	Player game = new Player();
-	Game_board field = new Game_board();
+	GameBoard field = new GameBoard();
 	Language language = new Language();
 	Die dice = new Die();
 	

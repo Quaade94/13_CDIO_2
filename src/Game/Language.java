@@ -36,6 +36,8 @@ public class Language {
 	
 	public String[] lang() {
 		
+		//Alt synlig tekst kan ses og redigeres nedenfor.
+		
 		sent0 = "Gold: ";
 		sent1 = "Gold: ";
 		sent2 = "Player 1's turn: ";
@@ -67,8 +69,7 @@ public class Language {
 		sent28 = "Player 1 is a winner!!";
 		sent29 = "Player 2 is a winner!!";
 		
-		
-		String [] word = {sent0 , sent1 , sent2 , sent3 , sent4 , sent5 , sent6 , sent7, sent8, sent9, sent10, sent11, sent12, sent13, sent14, sent15, sent16, sent17, sent18, sent19, sent20, sent21, sent22, sent23, sent24, sent25, sent26, sent27, sent28, sent29};
+		String [] word = {sent0,sent1,sent2,sent3,sent4,sent5,sent6,sent7,sent8,sent9,sent10,sent11,sent12,sent13,sent14,sent15,sent16,sent17,sent18,sent19,sent20,sent21,sent22,sent23,sent24,sent25,sent26,sent27,sent28,sent29};
 		return word;
 		
 	

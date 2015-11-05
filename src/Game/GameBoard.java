@@ -1,6 +1,6 @@
 package Game;
 
-public class Game_board {
+public class GameBoard {
 
 	Language X = new Language();
 	private int[] Fields = { 250, -100, 100, -20, 180, 0, -70, 60, -80, -50, 650 };
