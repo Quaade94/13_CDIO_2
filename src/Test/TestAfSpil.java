@@ -53,11 +53,56 @@ public class TestAfSpil {
 		assertEquals(Forv[1], Roll[1]);
 		assertEquals(Forv[2], Roll[2]);
 		
+		dice.setPreDiceMode(false);
 		
 	}
 	
-	
+	@Test 
+	public void testLandePaaFelt(){
+		
+		
+//		Spiller 1 test:
+		
+		
+		int D1 = 4;
+		int D2 = 5;
+		int ForventetNytSted = D1 + D2;
+		
+		dice.setPreDiceMode(true);
+		dice.setPreDiceValue(D1, D2);
+		
+		int [] Roll = dice.Roll();
+		
+		game.setPlayerPlace(true, Roll[2]);
+		
+//		System.out.println("Nyt spiller sted = " + game.getPlayerPlace(true) + " Forventede sted = " + ForventetNytSted);
+		
+		assertEquals(game.getPlayerPlace(true), ForventetNytSted);
+				
+		dice.setPreDiceMode(false);
+		
 
+//		Spiller 2 test:
+				
+		D1 = 5;
+		D2 = 6;
+		ForventetNytSted = D1 + D2;
+		
+		dice.setPreDiceMode(true);
+		dice.setPreDiceValue(D1, D2);
+		
+		Roll = dice.Roll();
+		
+		game.setPlayerPlace(false, Roll[2]);
+		
+//		System.out.println("Nyt spiller sted = " + game.getPlayerPlace(false) + " Forventede sted = " + ForventetNytSted);
+		
+		assertEquals(game.getPlayerPlace(false), ForventetNytSted);
+				
+		dice.setPreDiceMode(false);
+		
+	}
+		
 }
 // Ronni: test occurenses (dices, fields), ?
 
