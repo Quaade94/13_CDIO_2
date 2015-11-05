@@ -8,7 +8,7 @@ import java.awt.Font;
 
 public class GUI implements ActionListener {
 	//Overfører alt texten
-	Language X = new Language();
+	Language lang = new Language();
 	Die Roll = new Die();
 	GameBoard Board = new GameBoard();
 	Player Player = new Player();
@@ -17,20 +17,20 @@ public class GUI implements ActionListener {
 	private int p1Points = 1000;
 	private int p2Points = 1000;
 	private int playerSwitch = 0;
-	private JLabel p1Point = new JLabel(X.lang()[0] + p1Points);
-	private JLabel p2Point = new JLabel(X.lang()[1] + p2Points);;
-	private JLabel playerTurn = new JLabel(X.lang()[2], SwingConstants.CENTER);
+	private JLabel p1Point = new JLabel(lang.lang()[0] + p1Points);
+	private JLabel p2Point = new JLabel(lang.lang()[1] + p2Points);;
+	private JLabel playerTurn = new JLabel(lang.lang()[2], SwingConstants.CENTER);
 	
 	//private JLabel map_title = new JLabel(X.lang()[6]);
-	private JLabel player1Map = new JLabel(X.lang()[7]);
-	private JLabel player2Map = new JLabel(X.lang()[8]);
-	private JLabel rollMsg = new JLabel(X.lang()[9]);
-	private JLabel message = new JLabel(X.lang()[13]);
+	private JLabel player1Map = new JLabel(lang.lang()[7]);
+	private JLabel player2Map = new JLabel(lang.lang()[8]);
+	private JLabel rollMsg = new JLabel(lang.lang()[9]);
+	private JLabel message = new JLabel(lang.lang()[13]);
 	private JFrame frame = new JFrame();
-	private JLabel player1 = new JLabel(X.lang()[26]);
-	private JLabel player2 = new JLabel(X.lang()[27]);
+	private JLabel player1 = new JLabel(lang.lang()[26]);
+	private JLabel player2 = new JLabel(lang.lang()[27]);
 	private JPanel bottompanel = new JPanel();
-	private JButton button = new JButton(X.lang()[4]);
+	private JButton button = new JButton(lang.lang()[4]);
 
 	public GUI() {
 
@@ -94,7 +94,7 @@ public class GUI implements ActionListener {
 		// saetter rammen op
 		frame.add(container2, BorderLayout.CENTER);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setTitle(X.lang()[5]);
+		frame.setTitle(lang.lang()[5]);
 		frame.setSize(600, 400);
 		frame.setResizable(false);
 		//frame.pack();
@@ -110,12 +110,12 @@ public class GUI implements ActionListener {
 			Player.setPlayerPlace(true, roll[2]);
 			Player.setPlayerScorre(true);
 
-			p1Point.setText(X.lang()[0] + Player.getPlayerScorre(true));
-			rollMsg.setText(X.lang()[9] + roll[0] + " and " + roll[1]);
+			p1Point.setText(lang.lang()[0] + Player.getPlayerScorre(true));
+			rollMsg.setText(lang.lang()[9] + roll[0] + " and " + roll[1]);
 
 			if(Player.getPlayerScorre(true)>2999){
 				message.setFont(new Font("Sherif", Font.PLAIN, 35));
-				message.setText(X.lang()[28]);
+				message.setText(lang.lang()[28]);
 				playerTurn.setText("");
 				button.setEnabled(false);
 				return;
@@ -123,19 +123,19 @@ public class GUI implements ActionListener {
 			}
 
 			else if(Board.getFieldEffect(Player.getPlayerPlace(true))>=0){
-				message.setText(X.lang()[10] + Board.getFieldName(Player.getPlayerPlace(true)) + X.lang()[11]  + " " + Board.getFieldEffect(Player.getPlayerPlace(true))+ " " + X.lang()[25]);	
+				message.setText(lang.lang()[10] + Board.getFieldName(Player.getPlayerPlace(true)) + lang.lang()[11]  + " " + Board.getFieldEffect(Player.getPlayerPlace(true))+ " " + lang.lang()[25]);	
 			}
 			else if(Board.getFieldEffect(Player.getPlayerPlace(true))<0){
-				message.setText(X.lang()[10] + Board.getFieldName(Player.getPlayerPlace(true)) + X.lang()[12]  + " " + Math.abs(Board.getFieldEffect(Player.getPlayerPlace(true))) + " " + X.lang()[25]);	
+				message.setText(lang.lang()[10] + Board.getFieldName(Player.getPlayerPlace(true)) + lang.lang()[12]  + " " + Math.abs(Board.getFieldEffect(Player.getPlayerPlace(true))) + " " + lang.lang()[25]);	
 			}
-			player1Map.setText(X.lang()[7] + Player.getPlayerPlace(true)+". "+ Board.getFieldName(Player.getPlayerPlace(true)));
+			player1Map.setText(lang.lang()[7] + Player.getPlayerPlace(true)+". "+ Board.getFieldName(Player.getPlayerPlace(true)));
 
 			if (Player.getPlayerPlace(false)==9){
-				playerTurn.setText(X.lang()[2]);
+				playerTurn.setText(lang.lang()[2]);
 				playerSwitch = 0;
 			}
 			else {
-				playerTurn.setText(X.lang()[3]);
+				playerTurn.setText(lang.lang()[3]);
 				playerSwitch = 1;
 			}
 
@@ -145,29 +145,29 @@ public class GUI implements ActionListener {
 			Player.setPlayerPlace(false, roll[2]);
 			Player.setPlayerScorre(false);
 
-			p2Point.setText(X.lang()[1] + Player.getPlayerScorre(false));
-			rollMsg.setText(X.lang()[9] + roll[0] + " and " + roll[1]);
+			p2Point.setText(lang.lang()[1] + Player.getPlayerScorre(false));
+			rollMsg.setText(lang.lang()[9] + roll[0] + " and " + roll[1]);
 
 			if (Player.getPlayerScorre(false)>2999){
 				message.setFont(new Font("Sherif", Font.PLAIN, 35));
-				message.setText(X.lang()[29]);
+				message.setText(lang.lang()[29]);
 				playerTurn.setText("");
 				button.setEnabled(false);
 				return;
 			}
 
 			else if(Board.getFieldEffect(Player.getPlayerPlace(false))>=0){
-				message.setText(X.lang()[10] + Board.getFieldName(Player.getPlayerPlace(false)) + X.lang()[11]  + " " + Board.getFieldEffect(Player.getPlayerPlace(false)) + " " + X.lang()[25]);	
+				message.setText(lang.lang()[10] + Board.getFieldName(Player.getPlayerPlace(false)) + lang.lang()[11]  + " " + Board.getFieldEffect(Player.getPlayerPlace(false)) + " " + lang.lang()[25]);	
 			}
 			else if(Board.getFieldEffect(Player.getPlayerPlace(false))<0){
-				message.setText(X.lang()[10] + Board.getFieldName(Player.getPlayerPlace(false)) + X.lang()[12]  + " " + Math.abs(Board.getFieldEffect(Player.getPlayerPlace(false))) + " " + X.lang()[25]);	
-			}    			player2Map.setText(X.lang()[8]+Player.getPlayerPlace(false)+". "+ Board.getFieldName(Player.getPlayerPlace(false)));
+				message.setText(lang.lang()[10] + Board.getFieldName(Player.getPlayerPlace(false)) + lang.lang()[12]  + " " + Math.abs(Board.getFieldEffect(Player.getPlayerPlace(false))) + " " + lang.lang()[25]);	
+			}    			player2Map.setText(lang.lang()[8]+Player.getPlayerPlace(false)+". "+ Board.getFieldName(Player.getPlayerPlace(false)));
 			if (Player.getPlayerPlace(false)==9){
-				playerTurn.setText(X.lang()[3]);
+				playerTurn.setText(lang.lang()[3]);
 				playerSwitch = 1;
 			}
 			else {
-				playerTurn.setText(X.lang()[2]);
+				playerTurn.setText(lang.lang()[2]);
 				playerSwitch = 0;
 			}
 
