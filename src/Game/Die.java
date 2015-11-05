@@ -1,6 +1,6 @@
-package Spil;
+package Game;
 
-public class Terninger {
+public class Die {
 
 	private int Dice1;
 	private int Dice2;

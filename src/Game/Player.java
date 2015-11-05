@@ -1,8 +1,8 @@
-package Spil;
+package Game;
 
-public class Spiller {
+public class Player {
 
-	Spilleplade Plade = new Spilleplade();
+	Game_board Plade = new Game_board();
 
 	private int Player1Scorre = 1000;
 	private int Player2Scorre = 1000;
@@ -72,15 +72,15 @@ public class Spiller {
 		
 		if (PlayerNr == true){
 			
-			Player1Scorre = Player1Scorre + Plade.getFeltEffekt(Player1Place);
+			Player1Scorre = Player1Scorre + Plade.getFieldEffect(Player1Place);
 			if (Player1Scorre < 0){
 				Player1Scorre = 0;
 			}
-			System.out.println(Plade.getFeltEffekt(Player1Place));
+			System.out.println(Plade.getFieldEffect(Player1Place));
 //			System.out.println(Player1Scorre);
 		}else if (PlayerNr == false){
 			
-			Player2Scorre = Player2Scorre + Plade.getFeltEffekt(Player2Place);
+			Player2Scorre = Player2Scorre + Plade.getFieldEffect(Player2Place);
 			
 			if (Player2Scorre < 0){
 				Player2Scorre = 0;

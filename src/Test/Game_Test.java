@@ -4,19 +4,19 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import Spil.GUI;
-import Spil.Spiller;
-import Spil.Spilleplade;
-import Spil.Language;
-import Spil.Terninger;
+import Game.Die;
+import Game.GUI;
+import Game.Game_board;
+import Game.Language;
+import Game.Player;
 
-public class TestAfSpil {
+public class Game_Test {
 
 	GUI testgame = new GUI();
-	Spiller game = new Spiller();
-	Spilleplade field = new Spilleplade();
+	Player game = new Player();
+	Game_board field = new Game_board();
 	Language language = new Language();
-	Terninger dice = new Terninger();
+	Die dice = new Die();
 	
 //	@Test
 ////	public void testNegativePoint() {

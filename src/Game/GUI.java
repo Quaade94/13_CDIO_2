@@ -1,4 +1,4 @@
-package Spil;
+package Game;
 import javax.swing.*;
 
 import java.awt.*;
@@ -9,9 +9,9 @@ import java.awt.Font;
 public class GUI implements ActionListener {
 	//Overfører alt texten
 	Language X = new Language();
-	Terninger Roll = new Terninger();
-	Spilleplade Board = new Spilleplade();
-	Spiller Player = new Spiller();
+	Die Roll = new Die();
+	Game_board Board = new Game_board();
+	Player Player = new Player();
 
 	//laver variables
 	private int P1_points = 1000;
@@ -53,27 +53,27 @@ public class GUI implements ActionListener {
 		JPanel container2 = new JPanel();
 
 		//panel med text
-		JPanel panel = new JPanel();
-		panel.setBorder(BorderFactory.createEmptyBorder(30, 30, 10, 30));
-		panel.setLayout(new GridLayout(0,1));
-		panel.add(player1);
-		panel.add(P1_label);
-		panel.add(player1_map);
-		panel.setBackground(Color.lightGray);
+		JPanel pointPanel = new JPanel();
+		pointPanel.setBorder(BorderFactory.createEmptyBorder(30, 30, 10, 30));
+		pointPanel.setLayout(new GridLayout(0,1));
+		pointPanel.add(player1);
+		pointPanel.add(P1_label);
+		pointPanel.add(player1_map);
+		pointPanel.setBackground(Color.lightGray);
 
 		// panel med map??
-		JPanel panel2 = new JPanel();
-		panel2.setBorder(BorderFactory.createEmptyBorder(30, 30, 10, 30));
-		panel2.setLayout(new GridLayout(0,1));
-		panel2.add(player2);
-		panel2.add(P2_label);
-		panel2.add(player2_map);
-		panel2.setBackground(Color.lightGray);
+		JPanel mappanel = new JPanel();
+		mappanel.setBorder(BorderFactory.createEmptyBorder(30, 30, 10, 30));
+		mappanel.setLayout(new GridLayout(0,1));
+		mappanel.add(player2);
+		mappanel.add(P2_label);
+		mappanel.add(player2_map);
+		mappanel.setBackground(Color.lightGray);
 
 		//placere text og map ved siden af hinanden
 		container.setLayout(new GridLayout(1,2));
-		container.add(panel);
-		container.add(panel2);
+		container.add(pointPanel);
+		container.add(mappanel);
 
 		//panel med knap
 		panel3.add(player_turn);
@@ -108,24 +108,6 @@ public class GUI implements ActionListener {
 	}
 
 	// Hvad sker der, naar knappen bliver trykket:
-	//    public void actionPerformed(ActionEvent F) {
-	//    	int[] roll = Roll.Roll();
-	//        if (player_switch == 0) {
-	//            P1_points = P1_points + roll[2]; //skal vaere spillers totale points
-	//            P1_label.setText(X.lang()[0] + P1_points);
-	//            player_turn.setText(X.lang()[3]);
-	//            roll_msg.setText(X.lang()[9] + roll[0] + " and " + roll[1]);
-	//        	player_switch = 1;
-	//        } else if (player_switch == 1) {
-	//            P2_points = P2_points + roll[2]; //Not actual points plz mk plair cls
-	//            P2_label.setText(X.lang()[1] + P2_points);
-	//            player_turn.setText(X.lang()[2]);
-	//            roll_msg.setText(X.lang()[9] + roll[0] + " and " + roll[1]);
-	//        	player_switch = 0;
-	//        }
-	//    };
-
-	// Hvad sker der, naar knappen bliver trykket:
 	public void actionPerformed(ActionEvent F) {
 						
 		if (player_switch == 0) {
@@ -151,13 +133,13 @@ public class GUI implements ActionListener {
 				
 			}
 			
-			else if(Board.getFeltEffekt(Player.getPlayerPlace(true))>=0){
-				message.setText(X.lang()[10] + Board.getFeltNavn(Player.getPlayerPlace(true)) + X.lang()[11]  + " " + Board.getFeltEffekt(Player.getPlayerPlace(true))+ " " + X.lang()[25]);	
+			else if(Board.getFieldEffect(Player.getPlayerPlace(true))>=0){
+				message.setText(X.lang()[10] + Board.getFieldName(Player.getPlayerPlace(true)) + X.lang()[11]  + " " + Board.getFieldEffect(Player.getPlayerPlace(true))+ " " + X.lang()[25]);	
 			}
-			else if(Board.getFeltEffekt(Player.getPlayerPlace(true))<0){
-				message.setText(X.lang()[10] + Board.getFeltNavn(Player.getPlayerPlace(true)) + X.lang()[12]  + " " + Math.abs(Board.getFeltEffekt(Player.getPlayerPlace(true))) + " " + X.lang()[25]);	
+			else if(Board.getFieldEffect(Player.getPlayerPlace(true))<0){
+				message.setText(X.lang()[10] + Board.getFieldName(Player.getPlayerPlace(true)) + X.lang()[12]  + " " + Math.abs(Board.getFieldEffect(Player.getPlayerPlace(true))) + " " + X.lang()[25]);	
 			}
-			player1_map.setText(X.lang()[7] + Player.getPlayerPlace(true)+". "+ Board.getFeltNavn(Player.getPlayerPlace(true)));
+			player1_map.setText(X.lang()[7] + Player.getPlayerPlace(true)+". "+ Board.getFieldName(Player.getPlayerPlace(true)));
 
 			if (Player.getPlayerPlace(false)==9){
 				player_turn.setText(X.lang()[2]);
@@ -189,12 +171,12 @@ public class GUI implements ActionListener {
 				return;
 			}
 			
-			else if(Board.getFeltEffekt(Player.getPlayerPlace(false))>=0){
-				message.setText(X.lang()[10] + Board.getFeltNavn(Player.getPlayerPlace(false)) + X.lang()[11]  + " " + Board.getFeltEffekt(Player.getPlayerPlace(false)) + " " + X.lang()[25]);	
+			else if(Board.getFieldEffect(Player.getPlayerPlace(false))>=0){
+				message.setText(X.lang()[10] + Board.getFieldName(Player.getPlayerPlace(false)) + X.lang()[11]  + " " + Board.getFieldEffect(Player.getPlayerPlace(false)) + " " + X.lang()[25]);	
 			}
-			else if(Board.getFeltEffekt(Player.getPlayerPlace(false))<0){
-				message.setText(X.lang()[10] + Board.getFeltNavn(Player.getPlayerPlace(false)) + X.lang()[12]  + " " + Math.abs(Board.getFeltEffekt(Player.getPlayerPlace(false))) + " " + X.lang()[25]);	
-			}    			player2_map.setText(X.lang()[8]+Player.getPlayerPlace(false)+". "+ Board.getFeltNavn(Player.getPlayerPlace(false)));
+			else if(Board.getFieldEffect(Player.getPlayerPlace(false))<0){
+				message.setText(X.lang()[10] + Board.getFieldName(Player.getPlayerPlace(false)) + X.lang()[12]  + " " + Math.abs(Board.getFieldEffect(Player.getPlayerPlace(false))) + " " + X.lang()[25]);	
+			}    			player2_map.setText(X.lang()[8]+Player.getPlayerPlace(false)+". "+ Board.getFieldName(Player.getPlayerPlace(false)));
 				if (Player.getPlayerPlace(false)==9){
 					player_turn.setText(X.lang()[3]);
 					player_switch = 1;
