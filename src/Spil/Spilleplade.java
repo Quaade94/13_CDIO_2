@@ -1,7 +1,5 @@
 package Spil;
 
-import java.awt.Font;
-
 public class Spilleplade {
 /*
 	 [En spilleplade der har de forskellige navne til felterne, og deres numre,
