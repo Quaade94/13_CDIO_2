@@ -12,19 +12,37 @@ import Game.Language;
 import Game.Player;
 
 public class GameTest{
-
-	public static void main(String[] args) {
-		GUI testgame = new GUI();
-	//	Player game = new Player();
-	//	GameBoard field = new GameBoard();
-	//	Language language = new Language();
-		Die dice = new DieTest();
-		{
-		testgame.setRoll(dice);
-		
-		
-		}
+	static GUI testgame = new GUI();
+	Player game = new Player();
+	GameBoard field = new GameBoard();
+	Language language = new Language();
+	Die dice = new DieTest();
+	{
+	testgame.setRoll(dice);
+	
+	
 	}
+	
+	public static void main(String[] args) {
+
+
+	
+	}
+		
+		@Test 
+		public void testLandePaaFelt(){
+			
+			int ForventetNytSted = 8;
+			
+			int[] Roll = dice.roll();
+			
+			game.setPlayerPlace(false, Roll[2]);
+			
+			assertEquals(game.getPlayerPlace(false), ForventetNytSted);
+		}
+		
+		
+		
 }
 //	@Test
 ////	public void testNegativePoint() {
