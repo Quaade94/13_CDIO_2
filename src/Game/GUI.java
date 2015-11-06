@@ -142,7 +142,7 @@ public class GUI implements ActionListener {
 			}
 			player1Map.setText(lang.lang()[7] + Player.getPlayerPlace(true)+". "+ Board.getFieldName(Player.getPlayerPlace(true)));
 
-			if (Player.getPlayerPlace(false)==9){
+			if (Player.getPlayerPlace(true)==9){
 				playerTurn.setText(lang.lang()[2]);
 				playerSwitch = 0;
 			}
