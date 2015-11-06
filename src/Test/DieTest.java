@@ -1,4 +1,6 @@
-package Game;
+package Test;
+
+import Game.Die;
 
 public class DieTest extends Die{
 
@@ -7,5 +9,4 @@ public class DieTest extends Die{
 		return new int[] {4, 4, 8};
 	}
 
-	
 }

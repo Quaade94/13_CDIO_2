@@ -125,7 +125,7 @@ public class GUI implements ActionListener {
 			p1Point.setText(lang.lang()[0] + Player.getPlayerScore(true));
 			rollMsg.setText(lang.lang()[9] + roll[0] + " and " + roll[1]);
 
-			if(Player.getPlayerScore(true)>2999){
+			if(Player.getPlayerScore(true) >= 3000){
 				message.setFont(new Font("Sherif", Font.PLAIN, 35));
 				message.setText(lang.lang()[28]);
 				playerTurn.setText("");
@@ -168,7 +168,7 @@ public class GUI implements ActionListener {
 			p2Point.setText(lang.lang()[1] + Player.getPlayerScore(false));
 			rollMsg.setText(lang.lang()[9] + roll[0] + " and " + roll[1]);
 
-			if (Player.getPlayerScore(false)>2999){
+			if (Player.getPlayerScore(false) >= 3000){
 				message.setFont(new Font("Sherif", Font.PLAIN, 35));
 				message.setText(lang.lang()[29]);
 				playerTurn.setText("");
