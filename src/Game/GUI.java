@@ -13,6 +13,13 @@ public class GUI implements ActionListener {
 	GameBoard Board = new GameBoard();
 	Player Player = new Player();
 
+	long before1;
+	long before2;
+	long after1;
+	long after2;
+	
+	
+	
 	//laver variables
 	private int p1Points = 1000;
 	private int p2Points = 1000;
@@ -102,8 +109,11 @@ public class GUI implements ActionListener {
 	}
 
 	// Hvad sker der, naar knappen bliver trykket:
+	
 	public void actionPerformed(ActionEvent F) {
-
+		
+		before1 = System.currentTimeMillis();
+		
 		if (playerSwitch == 0) {
 			int[] roll = Roll.roll();
 
@@ -138,8 +148,13 @@ public class GUI implements ActionListener {
 				playerTurn.setText(lang.lang()[3]);
 				playerSwitch = 1;
 			}
-
+			
+			after1 = System.currentTimeMillis();
+			
 		} else if (playerSwitch == 1) {
+			
+			before1 = System.currentTimeMillis();
+			
 			int[] roll = Roll.roll();
 
 			Player.setPlayerPlace(false, roll[2]);
@@ -170,14 +185,48 @@ public class GUI implements ActionListener {
 				playerTurn.setText(lang.lang()[2]);
 				playerSwitch = 0;
 			}
-
+			
+			after2 = System.currentTimeMillis();
+			
 		} else {
 			System.out.println("Fejl i spillerskift");
 		}
+		
+		
+		
+		
+		
+		
+		
+		//Det her skal laves om:
+		System.out.println("Player 1 response time: " + (after1-before1) + "Milliseconds");
+		System.out.println("Player 2 resposne time: " + (after2-before2) + "Milliseconds");
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	};
+	
+	
+
+	public void setRoll(Die roll) {
+		Roll = roll;
+	}
 
 	// Viser GUI
 	public static void main(String[] args) {
+		
+		long x = System.currentTimeMillis();
 		new GUI();
+		long t = System.currentTimeMillis();
+		System.out.println("GUI launce respone time: " + (t-x) + " Milliseconds");
+		
 	}
 }

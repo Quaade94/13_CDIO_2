@@ -8,7 +8,7 @@ public class GameBoard {
 	
 
 	public int getFieldEffect(int playerField) {
-
+		
 		return fields[playerField-1];
 	}
 

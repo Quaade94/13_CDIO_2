@@ -17,7 +17,11 @@ public class GameTest {
 	GameBoard field = new GameBoard();
 	Language language = new Language();
 	Die dice = new Die();
+	{
+	testgame.setRoll(dice);
 	
+	
+	}
 //	@Test
 ////	public void testNegativePoint() {
 ////		game.setPlayerScorre(true);
