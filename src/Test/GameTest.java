@@ -55,7 +55,6 @@ public class GameTest{
 			assertTrue(game.getPlayerScore(true) <= 0);
 		}
 		
-		
 		@Test
 		public void testLandAllFields(){
 			Die dice2 = new Die();
@@ -74,7 +73,7 @@ public class GameTest{
 			int k = 0;
 			while (fieldDone == false) {
 
-				int[] Roll = dice.roll();
+				int[] Roll = dice2.roll();
 				game.setPlayerPlace(true, Roll[2]);
 				if (game.getPlayerPlace(true) == 1) {
 					a = 1;
@@ -104,6 +103,12 @@ public class GameTest{
 				}
 			}
 			assertTrue(fieldDone == true);
+		}
+		
+		@Test
+		public void test1000Point(){
+			assertTrue(game.getPlayerScore(true) == 1000);
+			assertTrue(game.getPlayerScore(false) == 1000);
 		}
 }
 //	@Test
