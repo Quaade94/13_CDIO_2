@@ -50,7 +50,7 @@ public class Player {
 		return returnElement;
 	}
 	
-	public void setPlayerScorre (boolean playerNo){
+	public void setPlayerScore (boolean playerNo){
 		
 		if (playerNo == true){
 			
@@ -68,7 +68,7 @@ public class Player {
 			}
 		}
 	}
-	public int getPlayerScorre(boolean playerNo){
+	public int getPlayerScore(boolean playerNo){
 		
 		int returnElement = 0;
 		

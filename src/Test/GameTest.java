@@ -1,7 +1,9 @@
 package Test;
 
 import static org.junit.Assert.assertEquals;
-
+import static org.junit.Assert.*;
+import static org.junit.matchers.JUnitMatchers.*;
+import static org.hamcrest.CoreMatchers.*;
 import org.junit.Test;
 
 import Game.Die;
@@ -16,21 +18,17 @@ public class GameTest{
 	Player game = new Player();
 	GameBoard field = new GameBoard();
 	Language language = new Language();
-	Die dice = new DieTest();
-	{
-	testgame.setRoll(dice);
-	
-	
-	}
+	static Die dice = new DieTest();
+
 	
 	public static void main(String[] args) {
-
+		testgame.setRoll(dice);
 
 	
 	}
 		
 		@Test 
-		public void testLandePaaFelt(){
+		public void testLandOnField(){
 			
 			int ForventetNytSted = 8;
 			
@@ -41,8 +39,24 @@ public class GameTest{
 			assertEquals(game.getPlayerPlace(false), ForventetNytSted);
 		}
 		
+		@Test
+		public void testNegativePoint(){
+
+			while (game.getPlayerScore(true) > 0) {
+
+				int[] Roll = dice.roll();
+				game.setPlayerPlace(true, Roll[2]);
+				while (field.getFieldEffect(game.getPlayerPlace(true)) > 0) {
+					Roll = dice.roll();
+					game.setPlayerPlace(true, Roll[2]);
+				}
+
+				game.setPlayerScore(true);
+			}
+			assertTrue(game.getPlayerScore(true) <= 0);
+		}
 		
-		
+
 }
 //	@Test
 ////	public void testNegativePoint() {
