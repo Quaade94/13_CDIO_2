@@ -5,22 +5,25 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 import Game.Die;
+import Game.DieTest;
 import Game.GUI;
 import Game.GameBoard;
 import Game.Language;
 import Game.Player;
 
-public class GameTest {
+public class GameTest{
 
-	GUI testgame = new GUI();
-	Player game = new Player();
-	GameBoard field = new GameBoard();
-	Language language = new Language();
-	Die dice = new Die();
-	{
-	testgame.setRoll(dice);
-	
-	
+	public static void main(String[] args) {
+		GUI testgame = new GUI();
+	//	Player game = new Player();
+	//	GameBoard field = new GameBoard();
+	//	Language language = new Language();
+		Die dice = new DieTest();
+		{
+		testgame.setRoll(dice);
+		
+		
+		}
 	}
 }
 //	@Test

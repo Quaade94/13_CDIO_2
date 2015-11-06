@@ -17,9 +17,7 @@ public class GUI implements ActionListener {
 	long before2;
 	long after1;
 	long after2;
-	
-	
-	
+
 	//laver variables
 	private int p1Points = 1000;
 	private int p2Points = 1000;
@@ -112,9 +110,13 @@ public class GUI implements ActionListener {
 	
 	public void actionPerformed(ActionEvent F) {
 		
-		before1 = System.currentTimeMillis();
+		
 		
 		if (playerSwitch == 0) {
+			
+			//reaktionstid på player 1
+			before1 = System.currentTimeMillis();
+			
 			int[] roll = Roll.roll();
 
 			Player.setPlayerPlace(true, roll[2]);
@@ -149,11 +151,14 @@ public class GUI implements ActionListener {
 				playerSwitch = 1;
 			}
 			
+			//reaktionstid på player 1
 			after1 = System.currentTimeMillis();
+			System.out.println("Player 1 response time: " + (after1-before1) + "Milliseconds");
 			
 		} else if (playerSwitch == 1) {
 			
-			before1 = System.currentTimeMillis();
+			//reaktionstid på player 2
+			before2 = System.currentTimeMillis();
 			
 			int[] roll = Roll.roll();
 
@@ -185,37 +190,16 @@ public class GUI implements ActionListener {
 				playerTurn.setText(lang.lang()[2]);
 				playerSwitch = 0;
 			}
-			
+			//reaktionstid på player 2
 			after2 = System.currentTimeMillis();
+			System.out.println("Player 2 resposne time: " + (after2-before2) + "Milliseconds");
 			
 		} else {
 			System.out.println("Fejl i spillerskift");
 		}
 		
-		
-		
-		
-		
-		
-		
-		//Det her skal laves om:
-		System.out.println("Player 1 response time: " + (after1-before1) + "Milliseconds");
-		System.out.println("Player 2 resposne time: " + (after2-before2) + "Milliseconds");
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 	};
 	
-	
-
 	public void setRoll(Die roll) {
 		Roll = roll;
 	}
@@ -223,10 +207,10 @@ public class GUI implements ActionListener {
 	// Viser GUI
 	public static void main(String[] args) {
 		
-		long x = System.currentTimeMillis();
+		long before3 = System.currentTimeMillis();
 		new GUI();
-		long t = System.currentTimeMillis();
-		System.out.println("GUI launce respone time: " + (t-x) + " Milliseconds");
+		long after3 = System.currentTimeMillis();
+		System.out.println("GUI launce respone time: " + (after3-before3) + " Milliseconds");
 		
 	}
 }
